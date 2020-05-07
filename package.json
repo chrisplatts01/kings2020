@@ -1,0 +1,27 @@
+{
+  "name": "kings2020",
+  "version": "0.0.1",
+  "author": "Chris Platts <chris@virelai.co.uk>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel       ./app/main.js -d ./assets -o main.js",
+    "watch": "parcel watch ./app/main.js -d ./assets -o main.js",
+    "build": "parcel build ./app/main.js -d ./assets -o main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisplatts01/kings2020.git"
+  },
+  "homepage": "https://github.com/chrisplatts01/kings2020#readme",
+  "devDependencies": {
+    "sass": "^1.26.5",
+    "bourbon": "^7.0.0",
+    "breakpoint-sass": "^2.7.1",
+    "cssnano": "^4.1.10",
+    "normalize.scss": "^0.1.0"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
+}

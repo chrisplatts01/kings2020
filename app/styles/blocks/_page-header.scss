@@ -1,0 +1,18 @@
+.header {
+  width: 100%;
+  background-color: $bgHeader;
+
+  .wrapper__inner {
+    @incude breakpoint($medium);
+    display: flex;
+  }
+
+  // .hdr-logo {
+
+  // }
+
+  // .nav-main {
+
+
+  // }
+}

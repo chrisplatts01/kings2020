@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+@include font-face(
+  'bureauGrotesque',
+  '../fonts/KingsBureauGrot-ThreeSeven',
+  ('woff', 'woff2')
+);
+
+@include font-face(
+  'bureauGrotesqueItalic',
+  '../fonts/KingsBureauGrot-ThrSevnItal',
+  ('woff', 'woff2')
+);
+
+@include font-face(
+  'bureaugrotesque-fiveone-italic',
+  '../fonts/KingsBureauGrot-FiveOneItal',
+  ('woff', 'woff2')
+);
+
+@include font-face(
+  'bureaugrotesque-fiveone',
+  '../fonts/KingsBureauGrot-FiveOne',
+  ('woff', 'woff2')
+);
+
+@include font-face(
+  'caslon',
+  '../fonts/KingsCaslon',
+  ('woff', 'woff2')
+);
+
+@include font-face(
+  'caslonItalic',
+  '../fonts/KingsCaslonItalic',
+  ('woff', 'woff2')
+);
+
+@include font-face(
+  'caslonSemiBold',
+  '../fonts/KingsCaslonSemiBold',
+  ('woff', 'woff2')
+);
+
+@include font-face(
+  'caslonSemiBoldItalic',
+  '../fonts/KingsCaslonSemiBoldItalic',
+  ('woff', 'woff2')
+);
+
+@include font-face(
+  'caslonDisplay',
+  '../fonts/KingsCaslonDisplay',
+  ('woff', 'woff2')
+);
+
+@include font-face(
+  'caslonDisplayItalic',
+  '../fonts/KingsCaslonDisplayItalic',
+  ('woff', 'woff2')
+);
+
+
