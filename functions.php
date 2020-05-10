@@ -35,7 +35,7 @@ if ( ! class_exists( 'Timber' ) ) {
 	add_filter(
 		'template_include',
 		function( $template ) {
-			return get_stylesheet_directory() . '/app/no-timber.html';
+			return get_stylesheet_directory() . '/src/no-timber.html';
 		}
 	);
 	return;
@@ -84,7 +84,7 @@ class StarterSite extends Timber\Site {
 		$context['foo']   = 'bar';
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::context();';
-		$context['menu']  = new Timber\Menu();
+		$context['menu']  = new Timber\Menu('Main menu');
 		$context['site']  = $this;
 		return $context;
 	}
@@ -159,6 +159,8 @@ class StarterSite extends Timber\Site {
 	public function add_to_twig( $twig ) {
 		$twig->addExtension( new Twig\Extension\StringLoaderExtension() );
 		$twig->addFilter( new Twig\TwigFilter( 'myfoo', array( $this, 'myfoo' ) ) );
+    $twig->addFunction( new Timber\Twig_Function( 'has_post_thumbnail', 'has_post_thumbnail' ) );
+		$twig->addFunction( new Timber\Twig_Function( 'the_post_thumbnail', 'the_post_thumbnail' ) );
 		return $twig;
 	}
 
@@ -168,7 +170,7 @@ class StarterSite extends Timber\Site {
  * Register the main stylesheet
  */
 function kings2020_register_main_stylesheet() {
-	wp_register_style('main-stylesheet', get_template_directory_uri() . '/assets/main.css', '', '1.0');
+	wp_register_style('main-stylesheet', get_template_directory_uri() . '/assets/styles/main.css', '', '1.0');
 	wp_enqueue_style('main-stylesheet');
 }
 add_action('wp_enqueue_scripts', 'kings2020_register_main_stylesheet');
@@ -177,7 +179,7 @@ add_action('wp_enqueue_scripts', 'kings2020_register_main_stylesheet');
  * Register the main script
  */
 function kings2020_register_main_script() {
-	wp_register_script('main-script', get_template_directory_uri() . '/assets/main.js', '', '1.0');
+	wp_register_script('main-script', get_template_directory_uri() . '/assets/scripts/main.js', '', '1.0');
 	wp_enqueue_script('main-script');
 }
 add_action('wp_enqueue_scripts', 'kings2020_register_main_script');

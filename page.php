@@ -23,6 +23,13 @@
 
 $context = Timber::context();
 
-$timber_post     = new Timber\Post();
-$context['post'] = $timber_post;
+$timber_post        = new Timber\Post();
+$timber_posts       = Timber::get_posts('post_type = post');
+$timber_categories  = Timber::get_terms('category');
+$timber_tags        = Timber::get_terms('post_tag');
+
+$context['post']       = $timber_post;
+$context['posts']      = $timber_posts;
+$context['categories'] = $timber_categories;
+$context['tags']       = $timber_tags;
 Timber::render( array( 'page-' . $timber_post->post_name . '.twig', 'page.twig' ), $context );

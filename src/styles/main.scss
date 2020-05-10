@@ -1,14 +1,19 @@
-// @import '../../../node_modules/normalize.scss/normalize.scss';
-// @import '../../../node_modules/bourbon/core/bourbon.scss';
-// @import '../../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss';
+@import '../../node_modules/normalize-scss/sass/_normalize.scss';
+@import '../../node_modules/bourbon/core/bourbon.scss';
+@import '../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss';
 
 @import './settings/_colours.scss';
 @import './settings/_breakpoints.scss';
 @import './settings/_fonts.scss';
+@import './settings/_typography.scss';
 
-@import './containers/_base.scss';
-@import './containers/_wrapper.scss';
+@import './base/_base.scss';
+@import './base/_text.scss';
 
 @import './blocks/_page-header.scss';
 @import './blocks/_page-footer.scss';
-@import './blocks/_main-nav.scss';
+@import './blocks/_nav-main.scss';
+@import './blocks/_hero.scss';
+@import './blocks/_skip-link.scss';
+
+@import './utilities/_containers.scss';

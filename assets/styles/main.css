@@ -1,0 +1,268 @@
+@font-face {
+  font-family: "bureau-grotesque-bold";
+  src: url("../fonts/KingsBureauGrot-ThreeSeven.woff") format("woff"), url("../fonts/KingsBureauGrot-ThreeSeven.woff2") format("woff2");
+}
+@font-face {
+  font-family: "bureau-grotesque-bolditalic";
+  src: url("../fonts/KingsBureauGrot-ThrSevnItal.woff") format("woff"), url("../fonts/KingsBureauGrot-ThrSevnItal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "bureau-grotesque";
+  src: url("../fonts/KingsBureauGrot-FiveOne.woff") format("woff"), url("../fonts/KingsBureauGrot-FiveOne.woff2") format("woff2");
+}
+@font-face {
+  font-family: "bureau-grotesque-italic";
+  src: url("../fonts/KingsBureauGrot-FiveOneItal.woff") format("woff"), url("../fonts/KingsBureauGrot-FiveOneItal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "caslon";
+  src: url("../fonts/KingsCaslon.woff") format("woff"), url("../fonts/KingsCaslon.woff2") format("woff2");
+}
+@font-face {
+  font-family: "caslon-italic";
+  src: url("../fonts/KingsCaslonItalic.woff") format("woff"), url("../fonts/KingsCaslonItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "caslon-bold";
+  src: url("../fonts/KingsCaslonSemiBold.woff") format("woff"), url("../fonts/KingsCaslonSemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "caslon-bolditalic";
+  src: url("../fonts/KingsCaslonSemiBoldItalic.woff") format("woff"), url("../fonts/KingsCaslonSemiBoldItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "caslon-display";
+  src: url("../fonts/KingsCaslonDisplay.woff") format("woff"), url("../fonts/KingsCaslonDisplay.woff2") format("woff2");
+}
+@font-face {
+  font-family: "caslon-display-italic";
+  src: url("../fonts/KingsCaslonDisplayItalic.woff") format("woff"), url("../fonts/KingsCaslonDisplayItalic.woff2") format("woff2");
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "caslon", serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "bureau-grotesque-bold", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+h2 {
+  font-family: "bureau-grotesque-bold", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+h3 {
+  font-family: "bureau-grotesque-bold", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+h4 {
+  font-family: "bureau-grotesque-bold", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+h5 {
+  font-family: "bureau-grotesque", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+h6 {
+  font-family: "bureau-grotesque-italic", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+p {
+  font-family: "caslon", serif;
+  font-family: "caslon", serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.page-header {
+  width: 100%;
+  background-color: #cdd7d7;
+}
+.page-header.is-fixed {
+  position: fixed;
+  top: 0;
+  opacity: 0.8;
+  z-index: 1000;
+}
+.page-header .wrapper__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media (min-width: 48rem) {
+  .page-header .wrapper__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.header__logo {
+  margin: 0;
+  font-family: "bureau-grotesque-bold", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+@media (min-width: 48rem) {
+  .header__logo {
+    font-size: 2.5rem;
+  }
+}
+.header__logo a {
+  display: inline-block;
+  text-decoration: none;
+  width: 18rem;
+  padding: 0.5rem 0 0.5rem 8rem;
+  background: transparent url("../images/kcl-logo.png") left center no-repeat;
+  background-size: auto 4.75rem;
+}
+@media (min-width: 48rem) {
+  .header__logo a {
+    width: 24rem;
+    padding: 0.5rem 0 0.5rem 12rem;
+    background: transparent url("../images/kcl-logo.png") left center no-repeat;
+    background-size: auto 6rem;
+  }
+}
+.header__logo a:link, .header__logo a:visited, .header__logo a:active {
+  color: #000;
+}
+.header__logo a:hover, .header__logo a:focus {
+  color: #000;
+}
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.8;
+  z-index: 1000;
+  display: none;
+}
+
+.nav-main {
+  font-family: "bureau-grotesque-bold", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0.5rem 0;
+}
+@media (min-width: 48rem) {
+  .nav-main {
+    font-size: 1.5rem;
+  }
+}
+.nav-main ul {
+  display: inline-block;
+  text-align: right;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-main .menu-item {
+  display: inline-block;
+  padding-right: 0.5rem;
+}
+.nav-main .menu-item:last-child {
+  padding-right: 0;
+}
+.nav-main .menu-item a {
+  text-decoration: none;
+  color: #000;
+}
+.nav-main .menu-item.current-menu-item a {
+  color: #df2525;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero__image {
+  width: 100%;
+}
+.hero__image img {
+  width: 100%;
+  height: auto;
+}
+
+.hero__text {
+  width: auto;
+  max-width: 45rem;
+}
+.hero__text p {
+  font-family: "caslon", serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 2.875rem;
+}
+
+@media (min-width: 64rem) {
+  .hero__image + .hero__text {
+    position: absolute;
+    max-width: 100%;
+    top: 5rem;
+    left: 5rem;
+    right: 5rem;
+    padding: 5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.skip-link {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  color: black;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.wrapper__inner {
+  width: auto;
+  margin: 0;
+}
+@media (min-width: 64rem) {
+  .wrapper__inner {
+    max-width: 62rem;
+    margin: 0 auto;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,26 +1,26 @@
 @charset "UTF-8";
 
 @include font-face(
-  'bureauGrotesque',
+  'bureau-grotesque-bold',
   '../fonts/KingsBureauGrot-ThreeSeven',
   ('woff', 'woff2')
 );
 
 @include font-face(
-  'bureauGrotesqueItalic',
+  'bureau-grotesque-bolditalic',
   '../fonts/KingsBureauGrot-ThrSevnItal',
   ('woff', 'woff2')
 );
 
 @include font-face(
-  'bureaugrotesque-fiveone-italic',
-  '../fonts/KingsBureauGrot-FiveOneItal',
+  'bureau-grotesque',
+  '../fonts/KingsBureauGrot-FiveOne',
   ('woff', 'woff2')
 );
 
 @include font-face(
-  'bureaugrotesque-fiveone',
-  '../fonts/KingsBureauGrot-FiveOne',
+  'bureau-grotesque-italic',
+  '../fonts/KingsBureauGrot-FiveOneItal',
   ('woff', 'woff2')
 );
 
@@ -31,33 +31,42 @@
 );
 
 @include font-face(
-  'caslonItalic',
+  'caslon-italic',
   '../fonts/KingsCaslonItalic',
   ('woff', 'woff2')
 );
 
 @include font-face(
-  'caslonSemiBold',
+  'caslon-bold',
   '../fonts/KingsCaslonSemiBold',
   ('woff', 'woff2')
 );
 
 @include font-face(
-  'caslonSemiBoldItalic',
+  'caslon-bolditalic',
   '../fonts/KingsCaslonSemiBoldItalic',
   ('woff', 'woff2')
 );
 
 @include font-face(
-  'caslonDisplay',
+  'caslon-display',
   '../fonts/KingsCaslonDisplay',
   ('woff', 'woff2')
 );
 
 @include font-face(
-  'caslonDisplayItalic',
+  'caslon-display-italic',
   '../fonts/KingsCaslonDisplayItalic',
   ('woff', 'woff2')
 );
 
-
+$sansSerif:    "bureau-grotesque", sans-serif;
+$sansSerif_I:  "bureau-grotesque-italic", sans-serif;
+$sansSerif_B:  "bureau-grotesque-bold", sans-serif;
+$sansSerif_BI: "bureau-grotesque-bolditalic", sans-serif;
+$serif:        "caslon", serif;
+$serif_B:      "caslon-bold", serif;
+$serif_I:      "caslon-italic", serif;
+$serif_BI:     "caslon-boldi", serif;
+$display:      "caslon-display", serif;
+$display_I:    "caslon-display-italic", serif;

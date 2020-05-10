@@ -1,0 +1,10 @@
+<header id="pageHeader" class="page-header" >
+  <div class="page-header__wrapper wrapper">
+    <h1 id="headerLogo" class="header__logo" role="banner">
+      <a class="header__link" href="{{site.url}}" rel="home">{{site.name}}</a>
+    </h1>
+    <nav id="navMain" class="nav-main" role="navigation">
+      {% include "modules/menu.twig" with {'items': menu.get_items} %}
+    </nav>
+  </div>
+</header>

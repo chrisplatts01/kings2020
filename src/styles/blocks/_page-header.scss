@@ -1,18 +1,78 @@
-.header {
+.page-header {
   width: 100%;
   background-color: $bgHeader;
 
-  .wrapper__inner {
-    @incude breakpoint($medium);
-    display: flex;
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    opacity: 0.8;
+    z-index: 1000;
   }
 
-  // .hdr-logo {
+  .wrapper__inner {
+    // height: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 
-  // }
+    @include breakpoint($medium) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+  }
+}
 
-  // .nav-main {
+.header__logo {
+  margin: 0;
+  font-family: $sansSerif_B;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 1px;
 
+  @include breakpoint($medium) {
+    font-size: 2.5rem;
+  }
 
-  // }
+  a {
+    display: inline-block;
+    text-decoration: none;
+    width: 18rem;
+    padding: .5rem 0 .5rem 8rem;
+    background: transparent url('../images/kcl-logo.png') left center no-repeat;
+    background-size: auto 4.75rem;
+
+    @include breakpoint($medium) {
+      width: 24rem;
+      padding: .5rem 0 .5rem 12rem;
+      background: transparent url('../images/kcl-logo.png') left center no-repeat;
+      background-size: auto 6rem;
+    }
+
+    &:link,
+    &:visited,
+    &:active {
+      color: $black;
+    }
+
+    &:hover,
+    &:focus {
+      color: $black;
+    }
+
+  //   &::before {
+  //     content: url('../images/kcl-logo.png');
+  //   }
+  }
+}
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.8;
+  z-index: 1000;
+  display: none;
 }
