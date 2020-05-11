@@ -1,5 +1,6 @@
 import _    from 'lodash';
 import $    from '../../node_modules/jquery/dist/jquery.js';
+import isotope from '../../node_modules/isotope-layout/dist/isotope.pkgd.js'
 
 $(function() {
   $('.wrapper').wrapInner('<div class="wrapper__inner"></div>');
@@ -18,12 +19,9 @@ $(function() {
       var pageScroll   = $window.scrollTop();
 
       if (pageScroll > headerHeight) {
-        // $header.addClass('is-fixed');
         $stickyHeader.slideDown();
       } else {
-        // $header.removeClass('is-fixed');
         $stickyHeader.hide();
-
       }
     });
   })();

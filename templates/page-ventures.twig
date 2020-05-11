@@ -4,7 +4,7 @@
 <main id="pageContent" class="page-content" role="main">
 	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 		<div class="article__wrapper wrapper">
-			<h1 class="article-h1">{{post.title}}</h1>
+			<!-- h1 class="article-h1">{{post.title}}</h1 -->
 			<section class="hero">
 				{% if ( has_post_thumbnail() ) %}
 					<div class="hero__image">
@@ -18,41 +18,52 @@
 		</div>
 	</article>
 
-	<section id="filters" class="ventures-filters">
-		<div class="ventures-filters__wrapper wrapper">
+{#
+	<section id="filters" class="filters">
+		<div class="filters__wrapper wrapper">
 			{% if ( categories ) %}
-				<h2>Categories {{ categories | length }}</h2>
+				<h2>Filter by category</h2>
 				<ul class="categories">
+					<li class="category category-all"><a class="button" href="#">All</a></li>
 					{% for category in categories %}
 						{% if ( category.id > 1 ) %}
-							<li class="category"><a href="{{category.link}}">{{ category.name }}</a></li>
+							<li class="category category--{{ category-slug }}"><a class="button" href="{{category.link}}">{{ category.name }}</a></li>
 						{% endif %}
 					{% endfor %}
 				</ul>
 			{% endif %}
-
 			{% if ( tags ) %}
-				<h2>Tags {{ tags | length }}</h2>
+				<h2>Tags</h2>
 				<ul class="tags">
+					<li class="tag tag-all"><a class="button" href="#">All</a></li>
 					{% for tag in tags %}
-						<li class="tag"><a href="{{tag.link}}">{{ tag.name }}</a></li>
+						<li class="tag tag-slug"><a class="button" href="{{tag.link}}">{{ tag.name }}</a></li>
 					{% endfor %}
 				</ul>
 			{% endif %}
 		</div>
 	</section>
+#}
 
-	<section id="ventures-gallery">
-		<div class="ventures-gallery__wrapper wrapper">
-			{% for venture in posts %}
+	<section id="gallery" class="gallery" data>
+		<div class="gallery__wrapper wrapper vp-portfolio vp-id-57 vp-portfolio__ready">
+			<h2>Filter by category</h2>
+
+			<!-- BEGIN: 'The Post Grid' plugin code -->
+			{{ function('do_shortcode', '[the-post-grid id="63" title="Filter by category"]')  }}
+			<!-- END: 'The Post Grid' plugin code -->
+
+{#			{% for venture in posts %}
 				<article class="venture tease-{{venture.post_type}}" id="tease-{{venture.ID}}">
-					<h2><a href="{{venture.link}}">{{venture.title}}</a></h2>
-					<p>{{venture.preview}}</p>
+					<h2>{{venture.title}}</h2>
 					{% if venture.get_thumbnail %}
-						<img src="{{venture.thumbnail.src}}" />
+						<img src="{{ venture.thumbnail.src }}" />
 					{% endif %}
+					<p>{{ venture.preview }}</p>
+					<!-- a class="button" href="{{ venture.link }}">More&hellip;</a -->
 				</article>
 			{% endfor %}
+#}
 		</div>
 	</section>
 </main>

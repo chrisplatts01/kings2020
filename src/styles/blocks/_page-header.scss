@@ -2,15 +2,7 @@
   width: 100%;
   background-color: $bgHeader;
 
-  &.is-fixed {
-    position: fixed;
-    top: 0;
-    opacity: 0.8;
-    z-index: 1000;
-  }
-
   .wrapper__inner {
-    // height: 6rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,15 +17,19 @@
 }
 
 .header__logo {
-  margin: 0;
   font-family: $sansSerif_B;
   font-size: 2rem;
   font-weight: 500;
   line-height: 1;
   letter-spacing: 1px;
+  margin: 0;
 
   @include breakpoint($medium) {
     font-size: 2.5rem;
+  }
+
+  @include breakpoint($large) {
+    margin-left: 0;
   }
 
   a {

@@ -10,25 +10,18 @@
   "scripts": {
     "clean": "rimraf assets/scripts/* assets/styles/*",
     "clean:all": "rimraf assets/**/*",
-
     "scripts": "webpack-cli --mode development --config webpack.config.js",
     "styles": "sass src/styles/main.scss assets/styles/main.css",
-
     "scripts:watch": "webpack-cli --watch --mode development --config webpack.config.js",
     "styles:watch": "sass --watch src/styles/main.scss assets/styles/main.css",
-
     "styles:prod": "sass --style=compressed src/styles/main.scss assets/styles/main.css",
     "scripts:prod": "webpack-cli --mode production --config webpack.config.js",
-
     "images": "copyfiles -f \"src/images/**/*\" assets/images",
     "fonts": "copyfiles -f \"src/fonts/**/*\" assets/fonts",
-
     "build": "yarn clean && yarn scripts &  yarn styles",
     "build:all": "yarn clean:all && yarn scripts & yarn styles & yarn images & yarn fonts",
     "build:prod": "yarn clean:all && yarn scripts:prod & yarn styles:prod & yarn images & yarn fonts",
-
     "watch": "yarn scripts:watch & yarn styles:watch",
-
     "test": "echo \"Error: no test specified yet\" && exit 1"
   },
   "devDependencies": {
@@ -43,6 +36,8 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "jquery": "^3.5.1"
+    "isotope-layout": "^3.0.6",
+    "jquery": "^3.5.1",
+    "masonry": "^0.0.2"
   }
 }

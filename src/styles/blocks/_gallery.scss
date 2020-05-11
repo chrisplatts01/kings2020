@@ -1,0 +1,83 @@
+.gallery {
+  background-color: $lightGrey;
+  padding-top: 1rem;
+
+  .filter-button-group {
+    button {
+      @extend .button;
+    }
+  }
+
+  // Styles for 'The Post Grid' plugin
+  .rt-tpg-container {
+
+    .rt-tpg-isotope-buttons {
+      text-align: left;
+      margin-left: 15px;
+
+      button {
+        @extend .button;
+        opacity: 1;
+      }
+    }
+
+    .rt-detail {
+      padding: 1rem .5rem !important;
+
+      .entry-title {
+        text-align: center;
+
+        a {
+          color: $black;
+        }
+      }
+
+      .entry-content {
+        font-family: $serif;
+        font-size: 1.375rem;
+        font-weight: 500;
+        line-height: 1.875;
+      }
+
+      .read-more {
+        text-align: center !important;
+
+        a {
+          @extend .button;
+          border-radius: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+  // .wrapper__inner {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   justify-content: space-between;
+  // }
+
+  // .venture {
+  //   width: 100%;
+  //   background-color: $white;
+  //   border: 1px solid $darkGrey;
+  //   padding: 1rem;
+  //   margin-bottom: 1rem;
+
+  //   @include breakpoint($small) {
+  //     width: 49%;
+  //   }
+
+  //   @include breakpoint($medium) {
+  //     width: 32%;
+  //   }
+
+  //   @include breakpoint($large) {
+  //     width: 24%;
+  //   }
+
+  //   h2 {
+  //     text-align: center;
+  //   }
+  // }
+// }

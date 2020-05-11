@@ -5,9 +5,15 @@
 .wrapper__inner {
   width: auto;
   margin: 0;
+  padding: 0 1rem;
 
   @include breakpoint($large) {
     max-width: $large - 2rem;
     margin: 0 auto;
+    padding: 0;
+  }
+
+  .is-fullwidth & {
+    padding: 0;
   }
 }

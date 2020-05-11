@@ -1,10 +1,18 @@
 .hero {
   position: relative;
-
 }
 
 .hero__image {
-  width: 100%;
+  position: relative;
+  left: -1rem;
+  right: -1rem;
+  width: calc(100% + 2rem);
+
+  @include breakpoint($large) {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
 
   img {
     width: 100%;
@@ -15,6 +23,12 @@
 .hero__text {
   width: auto;
   max-width: 45rem;
+  padding: 0 1rem;
+
+  @include breakpoint($large) {
+    padding: 0;
+  }
+
 
   p {
     font-family: $serif;
