@@ -1,5 +1,5 @@
 .gallery {
-  background-color: $lightGrey;
+  background-color: $white;
   padding-top: 1rem;
 
   .filter-button-group {
@@ -13,12 +13,17 @@
 
     .rt-tpg-isotope-buttons {
       text-align: left;
-      margin-left: 15px;
 
       button {
         @extend .button;
         opacity: 1;
       }
+    }
+
+    .rt-row .wrapper:last-child {
+      background-color: $lightGrey;
+      padding: 2rem 0;
+      margin-top: 2rem;
     }
 
     .rt-detail {

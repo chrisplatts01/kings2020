@@ -260,15 +260,19 @@ p {
 }
 
 .gallery {
-  background-color: #e8e8e8;
+  background-color: #fff;
   padding-top: 1rem;
 }
 .gallery .rt-tpg-container .rt-tpg-isotope-buttons {
   text-align: left;
-  margin-left: 15px;
 }
 .gallery .rt-tpg-container .rt-tpg-isotope-buttons button {
   opacity: 1;
+}
+.gallery .rt-tpg-container .rt-row .wrapper:last-child {
+  background-color: #e8e8e8;
+  padding: 2rem 0;
+  margin-top: 2rem;
 }
 .gallery .rt-tpg-container .rt-detail {
   padding: 1rem 0.5rem !important;
@@ -339,24 +343,24 @@ button:hover, button:focus, button.selected,
 }
 
 .wrapper {
-  width: 100%;
+  width: 100% !important;
 }
 
 .wrapper__inner {
-  position: relative;
-  width: auto;
-  margin: 0;
-  padding: 0 1rem;
+  position: relative !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 1rem !important;
 }
 @media (min-width: 64rem) {
   .wrapper__inner {
-    max-width: 62rem;
-    margin: 0 auto;
-    padding: 0;
+    max-width: 62rem !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
   }
 }
 .is-fullwidth .wrapper__inner {
-  padding: 0;
+  padding: 0 !important;
 }
 
 /*# sourceMappingURL=main.css.map */
