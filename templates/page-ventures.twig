@@ -5,12 +5,19 @@
 	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 		<div class="article__wrapper wrapper">
 			<!-- h1 class="article-h1">{{post.title}}</h1 -->
-			<section class="hero">
+			<section class="hero"
+				{% if ( has_post_thumbnail() ) %}
+					style="background-image: url(
+						{{ post.thumbnail.src }}
+					); background-size: cover; background-position: center center"
+				{% endif %}>
+				{#
 				{% if ( has_post_thumbnail() ) %}
 					<div class="hero__image">
-						{{ the_post_thumbnail('large') }}
+						{{ the_post_thumbnail.src }}
 					</div>
 				{% endif %}
+				#}
 				<div class="hero__text">
 					{{post.content}}
 				</div>
@@ -18,53 +25,19 @@
 		</div>
 	</article>
 
-{#
-	<section id="filters" class="filters">
-		<div class="filters__wrapper wrapper">
-			{% if ( categories ) %}
-				<h2>Filter by category</h2>
-				<ul class="categories">
-					<li class="category category-all"><a class="button" href="#">All</a></li>
-					{% for category in categories %}
-						{% if ( category.id > 1 ) %}
-							<li class="category category--{{ category-slug }}"><a class="button" href="{{category.link}}">{{ category.name }}</a></li>
-						{% endif %}
-					{% endfor %}
-				</ul>
-			{% endif %}
-			{% if ( tags ) %}
-				<h2>Tags</h2>
-				<ul class="tags">
-					<li class="tag tag-all"><a class="button" href="#">All</a></li>
-					{% for tag in tags %}
-						<li class="tag tag-slug"><a class="button" href="{{tag.link}}">{{ tag.name }}</a></li>
-					{% endfor %}
-				</ul>
-			{% endif %}
-		</div>
-	</section>
-#}
-
 	<section id="gallery" class="gallery" data>
-		<div class="gallery__wrapper wrapper vp-portfolio vp-id-57 vp-portfolio__ready">
-			<h2>Filter by category</h2>
-
-			<!-- BEGIN: 'The Post Grid' plugin code -->
-			{{ function('do_shortcode', '[the-post-grid id="63" title="Filter by category"]')  }}
-			<!-- END: 'The Post Grid' plugin code -->
-
-{#			{% for venture in posts %}
-				<article class="venture tease-{{venture.post_type}}" id="tease-{{venture.ID}}">
-					<h2>{{venture.title}}</h2>
-					{% if venture.get_thumbnail %}
-						<img src="{{ venture.thumbnail.src }}" />
-					{% endif %}
-					<p>{{ venture.preview }}</p>
-					<!-- a class="button" href="{{ venture.link }}">More&hellip;</a -->
-				</article>
-			{% endfor %}
-#}
+		<div class="gallery__heading">
+		<h2>Filter by category</h2>
 		</div>
+
+		<!-- BEGIN: 'The Post Grid' plugin code -->
+		{{ function('do_shortcode', '[the-post-grid id="63" title="Filter by category"]') }}
+		<!-- END: 'The Post Grid' plugin code -->
+
+		<!-- BEGIN: 'XXXX' plugin code -->
+		{#{ function('do_shortcode', '[wpupg-grid-with-filters id="64"]') }#}
+		<!-- END: 'The Post Grid' plugin code -->
+
 	</section>
 </main>
 {% endblock %}

@@ -23,10 +23,12 @@
 
 $context = Timber::context();
 
-$timber_post        = new Timber\Post();
-$timber_posts       = Timber::get_posts('post_type = post');
-$timber_categories  = Timber::get_terms('category');
-$timber_tags        = Timber::get_terms('post_tag');
+$timber_post          = new Timber\Post();
+$timber_posts         = Timber::get_posts('post_type = post');
+$timber_categories    = Timber::get_terms('category');
+$timber_tags          = Timber::get_terms('post_tag');
+
+shuffle($timber_posts);
 
 $context['post']       = $timber_post;
 $context['posts']      = $timber_posts;
