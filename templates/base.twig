@@ -1,4 +1,3 @@
-<div id="pageWrapper" class='page-wrapper'>
 
 {% block html_head_container %}
 
@@ -8,21 +7,21 @@
 {% endblock %}
 
 <body class="{{ body_class }}" data-template="base.twig">
-	<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
+	<div id="pageWrapper" class='page-wrapper'>
+		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
 
-	{% block header %}
-		{% include 'modules/page-header.twig' %}
-	{% endblock %}
+		{% block header %}
+			{% include 'modules/page-header.twig' %}
+		{% endblock %}
 
-	{% block content %}
-		Sorry, no content
-	{% endblock %}
+		{% block content %}
+			Sorry, no content
+		{% endblock %}
 
-	{% block footer %}
-		{% include 'modules/page-footer.twig' %}
-	{% endblock %}
-
-</div><!-- #pageWrapper -->
+		{% block footer %}
+			{% include 'modules/page-footer.twig' %}
+		{% endblock %}
+	</div><!-- #pageWrapper -->
 
 	{{ function('wp_footer') }}
 </body>
