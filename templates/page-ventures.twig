@@ -5,12 +5,19 @@
 	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 		<div class="article__wrapper wrapper">
 			<!-- h1 class="article-h1">{{post.title}}</h1 -->
-			<section class="hero">
+			<section class="hero"
+				{% if ( has_post_thumbnail() ) %}
+					style="background-image: url(
+						{{ post.thumbnail.src }}
+					); background-size: cover; background-position: center center"
+				{% endif %}>
+				{#
 				{% if ( has_post_thumbnail() ) %}
 					<div class="hero__image">
-						{{ the_post_thumbnail('large') }}
+						{{ the_post_thumbnail.src }}
 					</div>
 				{% endif %}
+				#}
 				<div class="hero__text">
 					{{post.content}}
 				</div>
@@ -25,6 +32,10 @@
 
 		<!-- BEGIN: 'The Post Grid' plugin code -->
 		{{ function('do_shortcode', '[the-post-grid id="63" title="Filter by category"]') }}
+		<!-- END: 'The Post Grid' plugin code -->
+
+		<!-- BEGIN: 'XXXX' plugin code -->
+		{#{ function('do_shortcode', '[wpupg-grid-with-filters id="64"]') }#}
 		<!-- END: 'The Post Grid' plugin code -->
 
 	</section>

@@ -31584,8 +31584,8 @@ __webpack_require__.r(__webpack_exports__);
 _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()(function() {
 
   // Fix wrapper and wrapper__inner classes for responsive layout
+  _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('.gallery__heading, .rt-tpg-isotope-buttons, .rt-tpg-isotope').wrap('<div class="wrapper"></div>');
   _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('.wrapper').wrapInner('<div class="wrapper__inner"></div>');
-  _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('.gallery__heading, .rt-tpg-isotope-buttons, .rt-tpg-isotope').addClass('wrapper__inner').wrap('<div class="wrapper"></div>');
 
   // Make page header sticky on scroll
   var stickyHeader = (function() {
