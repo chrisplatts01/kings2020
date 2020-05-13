@@ -1,3 +1,5 @@
+<div id="pageWrapper" class='page-wrapper'>
+
 {% block html_head_container %}
 
 {% include 'html-header.twig' %}
@@ -19,6 +21,8 @@
 	{% block footer %}
 		{% include 'modules/page-footer.twig' %}
 	{% endblock %}
+
+</div><!-- #pageWrapper -->
 
 	{{ function('wp_footer') }}
 </body>

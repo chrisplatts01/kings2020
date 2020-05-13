@@ -3,14 +3,9 @@
 {% block content %}
 <main id="pageContent" class="page-content" role="main">
 	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-		<div class="article__wrapper wrapper">
+		<div class="article__wrapper wrapper"{% if ( has_post_thumbnail() ) %} style="background-image: url({{ post.thumbnail.src }}); background-size: cover; background-position: center center"{% endif %}>
 			<!-- h1 class="article-h1">{{post.title}}</h1 -->
-			<section class="hero"
-				{% if ( has_post_thumbnail() ) %}
-					style="background-image: url(
-						{{ post.thumbnail.src }}
-					); background-size: cover; background-position: center center"
-				{% endif %}>
+			<section class="hero">
 				{#
 				{% if ( has_post_thumbnail() ) %}
 					<div class="hero__image">
