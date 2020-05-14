@@ -57,7 +57,7 @@ body {
 h1 {
   font-family: "bureau-grotesque-bold", sans-serif;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.5;
 }
 
@@ -71,7 +71,7 @@ h2 {
 h3 {
   font-family: "bureau-grotesque-bold", sans-serif;
   font-size: 1.125rem;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.5;
 }
 
@@ -99,9 +99,23 @@ h6 {
 p {
   font-family: "caslon", serif;
   font-family: "caslon", serif;
-  font-size: 1.125rem;
+  font-size: 1.375rem;
   font-weight: 400;
   line-height: 1.5;
+}
+
+.page-content {
+  background-color: #e8e8e8;
+}
+
+.post__feature-image {
+  margin-top: 2rem;
+}
+
+.post__content {
+  background-color: #fff;
+  padding: 0 2rem;
+  margin: 2rem 0;
 }
 
 .page-header {
@@ -151,7 +165,7 @@ p {
 @media (min-width: 48rem) {
   .header__logo a {
     width: 24rem;
-    padding: 0.5rem 0 0.5rem 12rem;
+    padding: 0.5rem 0 0.5rem 10rem;
     background: transparent url("../images/kcl-logo.png") left center no-repeat;
     background-size: auto 6rem;
   }
@@ -337,6 +351,22 @@ button:hover, button:focus, button.selected,
   background-color: #2991d6;
 }
 
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .wrapper {
   width: 100% !important;
 }
@@ -345,18 +375,66 @@ button:hover, button:focus, button.selected,
   position: relative !important;
   width: auto !important;
   margin: 0 !important;
-  padding: 0 1rem !important;
+  padding: 0 2rem !important;
   overflow: hidden;
 }
 @media (min-width: 64rem) {
   .wrapper__inner {
-    max-width: 62rem !important;
+    max-width: 60rem !important;
     margin: 0 auto !important;
     padding: 0 !important;
   }
 }
 .is-fullwidth .wrapper__inner {
   padding: 0 !important;
+}
+
+@media (min-width: 48rem) {
+  .grid {
+    display: grid;
+    grid-gap: 2rem;
+    gap: 2rem;
+    grid-template-columns: 56%;
+    grid-template-rows: auto auto;
+    grid-template-areas: "feature content" "gallery content" "gallery form";
+  }
+}
+.grid .gallery-item {
+  margin-bottom: 1rem;
+}
+.grid img {
+  width: 100%;
+  height: auto;
+}
+.grid .gallery-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+.grid .gallery-video iframe, .grid .video-container object, .grid .video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-item-1 {
+  grid-area: feature;
+}
+
+.grid-item-2 {
+  grid-area: content;
+}
+
+.grid-item-3 {
+  grid-area: gallery;
+}
+
+.grid-item-4 {
+  grid-area: form;
 }
 
 /*# sourceMappingURL=main.css.map */

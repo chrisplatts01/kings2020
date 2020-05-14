@@ -1,39 +1,30 @@
 {% extends "base.twig" %}
 
 {% block content %}
+<main class="page-content">
 	<div class="wrapper">
-		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-			<img src="{{ post.thumbnail.src|resize(1200, 300) }}">
-			<section class="article-content">
-				<h1 class="article-h1">{{ post.title }}</h1>
-				<a href="{{ post.link }}">{{ _e('edit') }}</a>
-				<p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
-				</p>
-				<div class="article-body">
+		<div class="post post-type-{{ post.post_type }} grid" id="post-{{ post.ID }}">
+			<div class="post__feature-image grid__grid-item grid-item-1">{% if post.thumbnail.src %}<img src="{{ post.thumbnail.src }}">{% endif %}</div>
+			<article class="post__content grid__grid-item grid-item-2">
+				<h1 class="post-heading">{{ post.title }}</h1>
+				<div class="post-body">
 					{{post.content}}
 				</div>
-			</section>
-
-			<!-- comment box -->
-			<section class="comment-box">
-				<!-- comments -->
-				<div class="comments">
-				    {% if post.comments %}
-					<h3> comments </h3>
-					{% for cmt in post.comments %}
-					    {% include "comment.twig" with {comment:cmt} %}
-					{% endfor %}
-				    {% endif %}
-				</div>
-
-				{% if post.comment_status == "closed" %}
-					<p> comments for this post are closed </p>
-				{% else %}
-				    <!-- comment form -->
-				    {% include "comment-form.twig" %}
-				{% endif %}
-			</section>
-		</article>
+			</article>
+			<div class="post__gallery grid__grid-item grid-item-3">
+				{% set rows = function('get_field', 'images') %}
+				{% for row in rows %}
+					{%if row.type == 'image' %}
+						{% if row.url %}<div class="gallery-item gallery-image"><img src="{{ row.url }}" alt="{{ row.alt }}"></div>{% endif %}
+					{% elseif row %}
+						<div class="gallery-item gallery-video">{{ row }}</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+			<div class="post__contact-form grid__grid-item grid-item-4">
+				{{ function('do_shortcode', '[contact-form-7 id="71" title="Venture Contact Form"]') }}
+			</div>
+		</div>
 	</div>
+</main>
 {% endblock %}

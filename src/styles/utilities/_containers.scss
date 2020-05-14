@@ -6,11 +6,11 @@
   position: relative !important;
   width: auto !important;
   margin: 0 !important;
-  padding: 0 1rem !important;
+  padding: 0 2rem !important;
   overflow: hidden;
 
   @include breakpoint($large) {
-    max-width: $large - 2rem !important;
+    max-width: $large - 4rem !important;
     margin: 0 auto !important;
     padding: 0 !important;
   }
@@ -18,4 +18,63 @@
   .is-fullwidth & {
     padding: 0 !important;
   }
+}
+
+.grid {
+
+  @include breakpoint($medium) {
+    display: grid;
+    grid-gap: 2rem;
+    gap: 2rem;
+    grid-template-columns: 56%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "feature content"
+      "gallery content"
+      "gallery form";
+}
+
+
+  .gallery-item {
+    margin-bottom: 1rem;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .gallery-video {
+    position:relative;
+    padding-bottom:56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+  }
+
+  .gallery-video iframe, .video-container object, .video-container embed {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+}
+
+.grid__grid-item {}
+
+.grid-item-1 {
+  grid-area: feature;
+}
+
+.grid-item-2 {
+  grid-area: content;
+}
+
+.grid-item-3 {
+  grid-area: gallery;
+}
+
+.grid-item-4 {
+  grid-area: form;
 }
