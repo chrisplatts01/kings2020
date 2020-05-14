@@ -384,7 +384,7 @@ button:hover, button:focus, button.selected,
   }
 }
 .grid .gallery-item {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .grid img {
   width: 100%;
