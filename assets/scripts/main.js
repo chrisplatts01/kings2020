@@ -31587,6 +31587,24 @@ _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()(funct
   _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('.gallery__heading, .rt-tpg-isotope-buttons, .rt-tpg-isotope').wrap('<div class="wrapper"></div>');
   _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('.wrapper').wrapInner('<div class="wrapper__inner"></div>');
 
+  // Fix home/ventures page post gallery layout
+  // - 'The Post Grid' plugin isotope layout not optimal,
+  // - so here the width classes are overwritten
+  var fixIsotopeLayout = (function () {
+    var $item = _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('.isotope-item');
+    var prefix = 'rt-col-';
+    var sizes = ['xs-', 'sm-', 'md-', 'lg-'];
+    var cols = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '24'];
+    var newClasses = 'rt-col-xs-12 rt-col-sm-4 rt-col-md-3 rt-col-lg-24';
+
+    sizes.forEach(function (size) {
+      cols.forEach(function (col) {
+        $item.removeClass(prefix + size + col);
+      });
+    });
+    $item.addClass(newClasses);
+  })();
+
   // Make page header sticky on scroll
   var stickyHeader = (function() {
     var $header = _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('#pageHeader');

@@ -1,19 +1,39 @@
 .wrapper {
   width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .wrapper__inner {
   position: relative !important;
   width: auto !important;
   margin: 0 !important;
-  padding: 0 2rem !important;
+  padding: 0 1rem !important;
   overflow: hidden;
 
-  @include breakpoint($large) {
-    max-width: $large - 4rem !important;
+  @include breakpoint($medium) {
+    max-width: $large !important;
     margin: 0 auto !important;
-    padding: 0 !important;
+    padding: 0 2rem!important;
   }
+
+  @include breakpoint($large) {
+    max-width: $larger !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+  }
+
+  @include breakpoint($larger) {
+    max-width: $largest !important;
+    margin: 0 auto !important;
+    padding: 0 9.375rem !important;
+  }
+
+  // @include breakpoint($largest) {
+  //   max-width: calc($largest - 18.75rem) !important;
+  //   margin: 0 auto !important;
+  //   padding: 0 !important;
+  // }
 
   .is-fullwidth & {
     padding: 0 !important;

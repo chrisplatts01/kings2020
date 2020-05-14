@@ -22,15 +22,15 @@
 
     .rt-row .wrapper:last-child {
       background-color: $lightGrey;
-      padding: 1rem 0;
+      padding: 0;
       margin-top: 0rem;
     }
 
     .rt-tpg-isotope {
-      margin: 0;
+      margin: $post-spacing 0;
 
       @include breakpoint($large) {
-        margin: 0 -1 * $post-spacing / 2;
+        margin: $post-spacing -1 * $post-spacing / 2;
       }
     }
 

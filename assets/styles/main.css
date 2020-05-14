@@ -128,7 +128,7 @@ p {
   justify-content: center;
   align-items: flex-start;
 }
-@media (min-width: 48rem) {
+@media (min-width: 50rem) {
   .page-header .wrapper__inner {
     flex-direction: row;
     justify-content: space-between;
@@ -144,7 +144,7 @@ p {
   letter-spacing: 1px;
   margin: 0;
 }
-@media (min-width: 48rem) {
+@media (min-width: 50rem) {
   .header__logo {
     font-size: 2.5rem;
   }
@@ -162,7 +162,7 @@ p {
   background: transparent url("../images/kcl-logo.png") left center no-repeat;
   background-size: auto 4.75rem;
 }
-@media (min-width: 48rem) {
+@media (min-width: 50rem) {
   .header__logo a {
     width: 24rem;
     padding: 0.5rem 0 0.5rem 10rem;
@@ -193,7 +193,7 @@ p {
   line-height: 1;
   padding: 0.5rem 0;
 }
-@media (min-width: 48rem) {
+@media (min-width: 50rem) {
   .nav-main {
     font-size: 1.5rem;
   }
@@ -228,7 +228,7 @@ p {
   margin: 1rem 0;
   background-color: rgba(255, 255, 255, 0.5);
 }
-@media (min-width: 48rem) {
+@media (min-width: 50rem) {
   .hero__text {
     padding: 0.5rem 1rem;
     margin: 4rem 0;
@@ -270,26 +270,26 @@ p {
 }
 .gallery .rt-tpg-container .rt-row .wrapper:last-child {
   background-color: #e8e8e8;
-  padding: 1rem 0;
+  padding: 0;
   margin-top: 0rem;
 }
 .gallery .rt-tpg-container .rt-tpg-isotope {
-  margin: 0;
+  margin: 2rem 0;
 }
 @media (min-width: 64rem) {
   .gallery .rt-tpg-container .rt-tpg-isotope {
-    margin: 0 -0.5rem;
+    margin: 2rem -1rem;
   }
 }
 .gallery .rt-tpg-container .isotope-item {
-  padding: 0 0.5rem;
+  padding: 0 1rem;
 }
 .gallery .rt-tpg-container .rt-holder {
   padding: 0;
 }
 .gallery .rt-tpg-container .rt-detail .entry-title {
   text-align: center;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
 }
 .gallery .rt-tpg-container .rt-detail .entry-title a {
   color: #000;
@@ -299,7 +299,7 @@ p {
   font-size: 1.375rem;
   font-weight: 500;
   line-height: 1.875;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
 }
 .gallery .rt-tpg-container .rt-detail .read-more {
   text-align: center !important;
@@ -353,27 +353,43 @@ button:hover, button:focus, button.selected,
 
 .wrapper {
   width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .wrapper__inner {
   position: relative !important;
   width: auto !important;
   margin: 0 !important;
-  padding: 0 2rem !important;
+  padding: 0 1rem !important;
   overflow: hidden;
+}
+@media (min-width: 50rem) {
+  .wrapper__inner {
+    max-width: 64rem !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+  }
 }
 @media (min-width: 64rem) {
   .wrapper__inner {
-    max-width: 60rem !important;
+    max-width: 80rem !important;
     margin: 0 auto !important;
-    padding: 0 !important;
+    padding: 0 2rem !important;
+  }
+}
+@media (min-width: 80rem) {
+  .wrapper__inner {
+    max-width: 120rem !important;
+    margin: 0 auto !important;
+    padding: 0 9.375rem !important;
   }
 }
 .is-fullwidth .wrapper__inner {
   padding: 0 !important;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 50rem) {
   .grid {
     display: grid;
     grid-gap: 2rem;
