@@ -57,10 +57,6 @@
     &:focus {
       color: $black;
     }
-
-  //   &::before {
-  //     content: url('../images/kcl-logo.png');
-  //   }
   }
 }
 
@@ -68,7 +64,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.9;
+  // opacity: 0.9;
   z-index: 1000;
   display: none;
 }
