@@ -4,8 +4,8 @@ import isotope from '../../node_modules/isotope-layout/dist/isotope.pkgd.js'
 
 $(function() {
 
-  // Fix wrapper and wrapper__inner classes for responsive layout
-  $('.gallery__heading, .rt-tpg-isotope-buttons, .rt-tpg-isotope').wrap('<div class="wrapper"></div>');
+  // Add wrapper and wrapper__inner classes for responsive layout
+  $('.post-grid__heading, .rt-tpg-isotope-buttons, .rt-tpg-isotope').wrap('<div class="wrapper"></div>');
   $('.wrapper').wrapInner('<div class="wrapper__inner"></div>');
 
   // Fix home/ventures page post gallery layout

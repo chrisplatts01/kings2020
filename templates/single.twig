@@ -14,10 +14,32 @@
 			<div class="post__gallery grid__grid-item grid-item-3">
 				{% set rows = function('get_field', 'images') %}
 				{% for row in rows %}
-					{%if row.type == 'image' %}
-						{% if row.url %}<div class="gallery-item gallery-image"><img src="{{ row.url }}" alt="{{ row.alt }}"></div>{% endif %}
-					{% elseif row %}
-						<div class="gallery-item gallery-video">{{ row }}</div>
+
+					<!-- Image from media library as array -->
+					{% if row.type == 'image' %}
+						<!--
+						{% for key, value in row %}
+							{{ key }} => {{ value }}
+						{% endfor %}
+						-->
+						<div class="gallery-item image image--array"><img src="{{ row.url }}" alt="{{ row.alt }}"></div>
+
+					<!-- Video from media library as array -->
+					{% elseif row.type == 'video' %}
+						<!--
+						{% for key, value in row %}
+							{{ key }} => {{ value }}
+						{% endfor %}
+						-->
+						<div class="gallery-item video video--array"><img src="{{ row.url }}" alt="{{ row.alt }}"></div>
+
+					<!-- Video from media library as HTML5 -->
+					{% elseif row | slice(0, 6) == '<video' %}
+						<div class="gallery-item video video--html5">{{ row }}</div>
+
+					<!-- Embedded YouTube|Vimeo video in IFRAME -->
+					{% elseif row | slice(0, 7) == '<iframe' %}
+						<div class="gallery-item video video--iframe">{{ row }}</div>
 					{% endif %}
 				{% endfor %}
 			</div>
