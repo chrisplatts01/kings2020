@@ -27,7 +27,29 @@
         margin: 30px -15px !important;
 
         .isotope-item {
-          margin: 0;
+          margin: 0 15px;
+          width: calc(100% - 30px);
+          float: none;
+
+          @include breakpoint($grid2Col) {
+            width: calc(50% - 30px);
+            float: left;
+          }
+
+          @include breakpoint($grid3Col) {
+            width: calc(33.33333333% - 30px);
+            float: left;
+          }
+
+          @include breakpoint($grid4Col) {
+            width: calc(25% - 30px);
+            float: left;
+          }
+
+          @include breakpoint($grid5Col) {
+            width: calc(20% - 30px);
+            float: left;
+          }
 
           .rt-img-holder {
             img {

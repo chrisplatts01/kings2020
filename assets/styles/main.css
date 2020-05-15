@@ -271,7 +271,33 @@ p {
   margin: 30px -15px !important;
 }
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item {
-  margin: 0;
+  margin: 0 15px;
+  width: calc(100% - 30px);
+  float: none;
+}
+@media (min-width: 32rem) {
+  .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item {
+    width: calc(50% - 30px);
+    float: left;
+  }
+}
+@media (min-width: 60rem) {
+  .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item {
+    width: calc(33.33333333% - 30px);
+    float: left;
+  }
+}
+@media (min-width: 90rem) {
+  .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item {
+    width: calc(25% - 30px);
+    float: left;
+  }
+}
+@media (min-width: 120rem) {
+  .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item {
+    width: calc(20% - 30px);
+    float: left;
+  }
 }
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item .rt-img-holder img {
   width: 100%;
