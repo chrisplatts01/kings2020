@@ -1,6 +1,7 @@
 .contact-form {
   background-color: $white;
   padding: 1rem;
+  width: 100%;
 
   input,
   textarea {
@@ -8,6 +9,7 @@
     border: 1px solid $darkGrey;
     border-radius: 3px;
     padding: 8px;
+    width: 80%;
   }
 
   input[type=submit] {

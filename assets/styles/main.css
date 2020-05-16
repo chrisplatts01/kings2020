@@ -371,6 +371,7 @@ img {
 .contact-form {
   background-color: #fff;
   padding: 1rem;
+  width: 100%;
 }
 .contact-form input,
 .contact-form textarea {
@@ -378,6 +379,7 @@ img {
   border: 1px solid #5a6469;
   border-radius: 3px;
   padding: 8px;
+  width: 80%;
 }
 .skip-link {
   border: 0;
