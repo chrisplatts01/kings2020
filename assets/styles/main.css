@@ -62,8 +62,8 @@ h1 {
 }
 
 h2 {
-  font-family: "bureau-grotesque-bold", sans-serif;
-  font-size: 1.25rem;
+  font-family: "bureau-grotesque", sans-serif;
+  font-size: 1.375rem;
   font-weight: 500;
   line-height: 1.5;
 }
@@ -102,6 +102,19 @@ p {
   font-size: 1.375rem;
   font-weight: 400;
   line-height: 1.5;
+}
+
+ul {
+  font-family: "caslon", serif;
+  font-family: "caslon", serif;
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 .page-content {
@@ -182,10 +195,6 @@ p {
 }
 
 .nav-main {
-  font-family: "bureau-grotesque-bold", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 500;
-  line-height: 1;
   padding: 0.5rem 0;
 }
 @media (min-width: 50rem) {
@@ -195,6 +204,10 @@ p {
 }
 .nav-main ul {
   display: inline-block;
+  font-family: "bureau-grotesque-bold", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1;
   text-align: right;
   list-style: none;
   margin: 0;
@@ -249,6 +262,12 @@ p {
 .post-grid {
   background-color: #fff;
 }
+.post-grid .post-grid__heading h2 {
+  font-family: "bureau-grotesque-bold", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
 .post-grid .rt-tpg-container .rt-row {
   padding: 0 !important;
   margin: 0 !important;
@@ -274,19 +293,19 @@ p {
   width: calc(100% - 30px);
   float: none;
 }
-@media (min-width: 32rem) {
+@media (min-width: 40rem) {
   .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item {
     width: calc(50% - 30px);
     float: left;
   }
 }
-@media (min-width: 60rem) {
+@media (min-width: 64rem) {
   .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item {
     width: calc(33.33333333% - 30px);
     float: left;
   }
 }
-@media (min-width: 90rem) {
+@media (min-width: 105rem) {
   .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item {
     width: calc(25% - 30px);
     float: left;
@@ -306,6 +325,10 @@ p {
   padding: 1rem 0.5rem !important;
 }
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item .rt-detail .entry-title {
+  font-family: "bureau-grotesque-bold", sans-serif;
+  font-size: 1.6875rem;
+  font-weight: 500;
+  line-height: 1.5;
   text-align: center;
 }
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item .rt-detail .entry-title a {

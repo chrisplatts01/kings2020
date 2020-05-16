@@ -31595,7 +31595,7 @@ _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()(funct
     var prefix = 'rt-col-';
     var sizes = ['xs-', 'sm-', 'md-', 'lg-'];
     var cols = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '24'];
-    var newClasses = 'rt-col-xs-12 rt-col-sm-6 rt-col-md-4 rt-col-lg-3 rt-col-xl-24';
+    // var newClasses = 'rt-col-xs-12 rt-col-sm-6 rt-col-md-4 rt-col-lg-3 rt-col-xl-24';
 
     sizes.forEach(function (size) {
       cols.forEach(function (col) {
@@ -31604,6 +31604,16 @@ _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()(funct
     });
     // $item.addClass(newClasses);
   })();
+
+  // Fix menu highlight
+  var path = window.location.href;
+  console.log('PATH: ', path, path.search('/ventures/'));
+  if (path.search('/ventures/') !== -1) {
+    console.log('FOUND');
+    _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('#navMain').find('.menu').find('.menu-item').first().addClass('current-menu-item');
+  } else {
+    console.log('NOT FOUND');
+  }
 
   // Make page header sticky on scroll
   var stickyHeader = (function() {

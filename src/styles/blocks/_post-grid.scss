@@ -1,6 +1,13 @@
 .post-grid {
   background-color: $white;
 
+  .post-grid__heading h2 {
+    font-family: $sansSerif_B;
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
   // Styles for 'The Post Grid' plugin
   .rt-tpg-container {
     .rt-row {
@@ -62,6 +69,10 @@
             padding: $post-spacing $post-spacing / 2 !important;
 
             .entry-title {
+              font-family: $sansSerif_B;
+              font-size: 1.6875rem;
+              font-weight: 500;
+              line-height: 1.5;
               text-align: center;
 
               a {
@@ -87,77 +98,5 @@
         }
       }
     }
-
-    // .rt-row {
-    //   margin: 0;
-    // }
-
-    // .rt-tpg-isotope-buttons {
-    //   background-color: $white;
-    //   text-align: left;
-    //   margin: 0 1rem;
-
-    //   @include breakpoint($large) {
-    //     margin: 0;
-    //   }
-
-    //   button {
-    //     @extend .button;
-    //     margin: 0 1rem 1rem 0;
-    //     opacity: 1;
-    //   }
-    // }
-
-    // .rt-row .wrapper:last-child {
-    //   background-color: $lightGrey;
-    //   padding: 0;
-    //   margin-top: 0rem;
-    // }
-
-    // .rt-tpg-isotope {
-    //   margin: $post-spacing 0;
-
-    //   @include breakpoint($large) {
-    //     margin: $post-spacing -1 * $post-spacing / 2;
-    //   }
-    // }
-
-    // .isotope-item {
-    //   padding: 0 $post-spacing / 2;
-    // }
-
-    // .rt-holder {
-    //   padding: 0;
-    // }
-
-    // .rt-detail {
-    //   padding: 0 1rem !important;
-
-    //   .entry-title {
-    //     text-align: center;
-    //     padding: 0 $post-spacing / 2;
-
-    //     a {
-    //       color: $black;
-    //     }
-    //   }
-
-    //   .entry-content {
-    //     font-family: $serif;
-    //     font-size: 1.375rem;
-    //     font-weight: 500;
-    //     line-height: 1.875;
-    //     padding: 0 $post-spacing / 2;
-    //   }
-
-    //   .read-more {
-    //     text-align: center !important;
-
-    //     a {
-    //       @extend .button;
-    //       border-radius: 0 !important;
-    //     }
-    //   }
-    // }
   }
 }
