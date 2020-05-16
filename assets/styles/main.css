@@ -368,6 +368,17 @@ img {
   height: 100%;
 }
 
+.contact-form {
+  background-color: #fff;
+  padding: 1rem;
+}
+.contact-form input,
+.contact-form textarea {
+  font-size: 1.5rem;
+  border: 1px solid #5a6469;
+  border-radius: 3px;
+  padding: 8px;
+}
 .skip-link {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -384,7 +395,8 @@ img {
 button,
 .button,
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope-buttons button,
-.post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item .rt-detail .read-more a {
+.post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item .rt-detail .read-more a,
+.contact-form input[type=submit] {
   font-family: "bureau-grotesque-bold", sans-serif;
   font-size: 1rem;
   font-weight: 500;
@@ -401,12 +413,15 @@ button:hover, button:focus, button.selected,
 .button:hover,
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope-buttons button:hover,
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item .rt-detail .read-more a:hover,
+.contact-form input[type=submit]:hover,
 .button:focus,
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope-buttons button:focus,
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item .rt-detail .read-more a:focus,
+.contact-form input[type=submit]:focus,
 .button.selected,
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope-buttons button.selected,
-.post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item .rt-detail .read-more a.selected {
+.post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item .rt-detail .read-more a.selected,
+.contact-form input.selected[type=submit] {
   color: #fff;
   background-color: #2991d6;
 }
