@@ -346,21 +346,21 @@ img {
   border-radius: 0 !important;
 }
 
-.gallery .gallery-item {
+.post__gallery .gallery-item {
   margin-bottom: 2rem;
 }
-.gallery .gallery-item.image img {
+.post__gallery .gallery-item.image img {
   width: 100%;
   height: auto;
 }
-.gallery .gallery-item.video {
+.post__gallery .gallery-item.video {
   position: relative;
   padding-bottom: 56.25%;
   overflow: hidden;
   width: 100%;
   height: 0;
 }
-.gallery .gallery-item.video iframe, .gallery .gallery-item.video embed, .gallery .gallery-item.video object {
+.post__gallery .gallery-item.video iframe, .post__gallery .gallery-item.video embed, .post__gallery .gallery-item.video object {
   position: absolute;
   top: 0;
   left: 0;
@@ -370,17 +370,56 @@ img {
 
 .contact-form {
   background-color: #fff;
-  padding: 1rem;
+  padding: 1rem 1rem 0;
   width: 100%;
 }
 .contact-form input,
 .contact-form textarea {
   font-size: 1.5rem;
-  border: 1px solid #5a6469;
+  border: 2px solid #cdd7d7;
   border-radius: 3px;
   padding: 8px;
-  width: 80%;
+  width: 100%;
 }
+.contact-form input:hover, .contact-form input:focus,
+.contact-form textarea:hover,
+.contact-form textarea:focus {
+  border-color: #2991d6;
+}
+.contact-form input.wpcf7-not-valid,
+.contact-form textarea.wpcf7-not-valid {
+  border-color: #df2525;
+}
+.contact-form input[type=submit] {
+  color: #fff !important;
+  background-color: #2991d6 !important;
+  border-radius: 0;
+}
+.contact-form input[type=submit]:hover, .contact-form input[type=submit]:focus {
+  background-color: #195780 !important;
+}
+.contact-form .wpcf7-not-valid-tip {
+  display: inline-block;
+  color: #fff;
+  background-color: #df2525;
+  padding: 0 0.5rem;
+  font-family: "bureau-grotesque", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  float: right;
+}
+.contact-form .wpcf7-display-none {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .skip-link {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);

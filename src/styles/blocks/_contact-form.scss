@@ -1,18 +1,50 @@
 .contact-form {
   background-color: $white;
-  padding: 1rem;
+  padding: 1rem 1rem 0;
   width: 100%;
 
   input,
   textarea {
     font-size: 1.5rem;
-    border: 1px solid $darkGrey;
+    border: 2px solid $midGrey;
     border-radius: 3px;
     padding: 8px;
-    width: 80%;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      border-color: $blue;
+    }
+
+    &.wpcf7-not-valid {
+      border-color: $red;
+    }
   }
 
   input[type=submit] {
     @extend .button;
+    color: $white !important;
+    background-color: $blue !important;
+    border-radius: 0;
+
+    &:hover,
+    &:focus {
+      background-color: darken($blue, 20%) !important;
+    }
+  }
+
+  .wpcf7-not-valid-tip {
+    display: inline-block;
+    color: $white;
+    background-color: $red;
+    padding: 0 .5rem;
+    font-family: $sansSerif;
+    font-size: 1rem;
+    font-weight: 500;
+    float: right;
+  }
+
+  .wpcf7-display-none {
+    @include hide-visually();
   }
 }
