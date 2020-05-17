@@ -1,31 +1,72 @@
 
-# The Timber Starter Theme
+# Kings2020 Theme
 
-The "_s" for Timber: a dead-simple theme that you can build from. The primary purpose of this theme is to provide a file structure rather than a framework for markup or styles. Configure your Sass, scripts, and task runners however you would like!
+The Wordpress theme for the Kings Ventures website (2020), based on the Timber Starter theme (a Twig-based theme based on the "\_s" theme).
 
-[![Build Status](https://travis-ci.org/timber/starter-theme.svg)](https://travis-ci.org/timber/starter-theme)
+## Installation [installation]
 
-## Installing the Theme
+### Install these required plugins [install-plugins]
 
-Install this theme as you would any other, and be sure the Timber plugin is activated. But hey, let's break it down into some bullets:
+- _Timber_: The WordPress Timber Library allowing you to develop templates using [Twig](https://twig.symfony.com).
+    - [Website](http://upstatement.com/timber)
+    - [Documentation](https://github.com/jarednova/timber/wiki)
+- _Advanced Custom Fields_: Configure custom field groups
+    - [Website](https://www.advancedcustomfields.com/)
+- _The Post Grid_: Layout grid for posts using the [Isotope](https://isotope.metafizzy.co) layout engine.
+    - [Documentation](https://www.radiustheme.com/how-to-setup-configure-the-post-grid-free-version-for-wordpress/)
+- _Contact Form 7_: Form builder.
+    - [Website](https://contactform7.com/)
 
-1. Make sure you have installed the plugin for the [Timber Library](https://wordpress.org/plugins/timber-library/) (and Advanced Custom Fields - they [play quite nicely](https://timber.github.io/docs/guides/acf-cookbook/#nav) together). 
-2. Download the zip for this theme (or clone it) and move it to `wp-content/themes` in your WordPress installation. 
-3. Rename the folder to something that makes sense for your website (generally no spaces and all lowercase). You could keep the name `timber-starter-theme` but the point of a starter theme is to make it your own!
-4. Activate the theme in Appearance >  Themes.
-5. Do your thing! And read [the docs](https://github.com/jarednova/timber/wiki).
+### Install the theme [install-theme]
 
-## What's here?
+Install the theme by copying the Kings2020 theme folder into wp-content/themes/ folder of your Wordpress installation. The repository for the theme can be found at [https://github.com/chrisplatts01/kings2020](https://github.com/chrisplatts01/kings2020)
 
-`static/` is where you can keep your static front-end scripts, styles, or images. In other words, your Sass files, JS files, fonts, and SVGs would live here.
+## Building the theme [build]
 
-`templates/` contains all of your Twig templates. These pretty much correspond 1 to 1 with the PHP files that respond to the WordPress template hierarchy. At the end of each PHP template, you'll notice a `Timber::render()` function whose first parameter is the Twig file where that data (or `$context`) will be used. Just an FYI.
+Install [NodeJS](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com).
 
-`bin/` and `tests/` ... basically don't worry about (or remove) these unless you know what they are and want to.
+Run `yarn install` to download the required node packages
+Run `yarn build` to clean, bundle, compile and copy all assets
 
-## Other Resources
+See [below for more commands](#commands).
 
-The [main Timber Wiki](https://github.com/jarednova/timber/wiki) is super great, so reference those often. Also, check out these articles and projects for more info:
+## Folders [folders]
+
+`./assets/` -- Destination for generated CSS stylesheets and JS scripts, amd copied static assets (images, fonts, etc).
+`./src/` -- Source files for SCSS stylesheet files, JS scripts, images and fonts.
+`./templates/` -- Twig templates.
+`node_packages` -- NodeJS packages required to build and run the theme.
+`.git` -- Files for managing the Git repository.
+
+## Files [files]
+
+`style.css` -- Definition file for the theme.
+`*.php` -- PHP view files - generally with a 1 to 1 relationship with the Twig files in `./templates/`.
+`package.json` -- Configuration for the node build system, including required node packages, CLI scripts for building the stylesheet and JS assets, etc.
+`webpack.config.js` -- Configuration file for the Webpack javascript bundler.
+
+## Commands [commands]
+
+`yarn install` -- Install required node packages
+`yarn clean` -- Delete script and stylesheet assets
+`yarn clean:all` -- Delete all assets
+`yarn scripts` -- Bundle script assets
+`yarn styles` -- Compile stylesheet assets
+`yarn scripts:watch` -- Bundle script assets and watch for further changes to JS source files
+`yarn styles:watch` -- Compile stylesheets assets and watch for further changes to SCSS source files
+`yarn styles:prod` -- Compile and minify stylesheet assets
+`yarn scripts:prod` --  Bundle and minify script assets
+`yarn images` -- Copy image assets
+`yarn fonts` -- Copy font assets
+`yarn build` -- Delete and build script and stylesheet assets
+`yarn build:all` -- Delete and build/copy all assets
+`yarn build:prod` -- Delate, build/copy and minimise all assets     "yarn clean:all && yarn scripts:prod & yarn styles:prod & yarn images & yarn fonts",
+`yarn watch` -- Bundle scripts, compile stylesheet assets and minify
+
+
+## Other Resources [other-resources]
+
+Check out these articles and projects for more info:
 
 * [This branch](https://github.com/laras126/timber-starter-theme/tree/tackle-box) of the starter theme has some more example code with ACF and a slightly different set up.
 * [Twig for Timber Cheatsheet](http://notlaura.com/the-twig-for-timber-cheatsheet/)
