@@ -47,7 +47,7 @@
     display: grid;
     grid-gap: 2rem;
     gap: 2rem;
-    grid-template-columns: 56%;
+    grid-template-columns: 56% auto;
     grid-template-rows: auto auto;
     grid-template-areas:
       "gallery content"
