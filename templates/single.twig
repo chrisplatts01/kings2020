@@ -4,13 +4,13 @@
 <main class="page-content">
 	<div class="wrapper">
 		<div class="post post-type-{{ post.post_type }} grid" id="post-{{ post.ID }}">
-			<article class="post__content grid__grid-item grid-item--main-content">
+			<article class="post__content grid-item grid-item--main-content">
 				<h1 class="post-heading">{{ post.title }}</h1>
 				<div class="post-body">
 					{{post.content}}
 				</div>
 			</article>
-			<div class="post__gallery grid__grid-item grid-item--gallery">
+			<div class="post__gallery grid-item grid-item--gallery">
 				{% set rows = function('get_field', 'images') %}
 				{% for row in rows %}
 						{# <!--
@@ -38,7 +38,7 @@
 					{% endif %}
 				{% endfor %}
 			</div>
-			<div class="post__contact-form grid__grid-item grid-item--contact-form">
+			<div class="post__contact-form grid-item grid-item--contact-form">
 				<section class="contact-form">
 				  <h1>Contact us</h1>
 				  {{ function('do_shortcode', '[contact-form-7 id="115" title="Venture Contact Form"]') }}
