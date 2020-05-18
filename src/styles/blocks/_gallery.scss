@@ -9,7 +9,17 @@
       }
     }
 
-    &.video {
+    &.video--array,
+    &.video--html5 {
+      video {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &.video--fvplayer {}
+
+    &.video--iframe {
       position: relative;
       padding-bottom: 56.25%;
       overflow: hidden;
@@ -18,7 +28,8 @@
 
       & iframe,
       & embed,
-      & object {
+      & object,
+      & video {
         position:absolute;
         top:0;
         left:0;

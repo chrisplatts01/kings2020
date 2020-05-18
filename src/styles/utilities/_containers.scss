@@ -50,7 +50,7 @@
     grid-template-columns: 56%;
     grid-template-rows: auto auto;
     grid-template-areas:
-      "feature content"
+      "gallery content"
       "gallery content"
       "gallery form";
   }
@@ -58,18 +58,14 @@
 
 .grid__grid-item {}
 
-.grid-item-1 {
-  grid-area: feature;
-}
-
-.grid-item-2 {
+.grid-item--main-content {
   grid-area: content;
 }
 
-.grid-item-3 {
+.grid-item--gallery {
   grid-area: gallery;
 }
 
-.grid-item-4 {
+.grid-item--contact-form {
   grid-area: form;
 }

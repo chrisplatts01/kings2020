@@ -4,50 +4,41 @@
 <main class="page-content">
 	<div class="wrapper">
 		<div class="post post-type-{{ post.post_type }} grid" id="post-{{ post.ID }}">
-			<div class="post__feature-image grid__grid-item grid-item-1">{% if post.thumbnail.src %}<img src="{{ post.thumbnail.src }}">{% endif %}</div>
-			<article class="post__content grid__grid-item grid-item-2">
+			<article class="post__content grid__grid-item grid-item--main-content">
 				<h1 class="post-heading">{{ post.title }}</h1>
 				<div class="post-body">
 					{{post.content}}
 				</div>
 			</article>
-			<div class="post__gallery grid__grid-item grid-item-3">
+			<div class="post__gallery grid__grid-item grid-item--gallery">
 				{% set rows = function('get_field', 'images') %}
 				{% for row in rows %}
-
-					<!-- Image from media library as array -->
-					{% if row.type == 'image' %}
-						<!--
+						{# <!--
 						{% for key, value in row %}
 							{{ key }} => {{ value }}
 						{% endfor %}
-						-->
+						--> #}
+
+					<!-- Image from media library as array -->
+					{% if row.type == 'image' %}
 						<div class="gallery-item image image--array"><img src="{{ row.url }}" alt="{{ row.alt }}"></div>
 
 					<!-- Video from media library as array -->
 					{% elseif row.type == 'video' %}
-						<!--
-						{% for key, value in row %}
-							{{ key }} => {{ value }}
-						{% endfor %}
-						-->
-						<div class="gallery-item video video--array"><img src="{{ row.url }}" alt="{{ row.alt }}"></div>
-
-					<!-- Video from media library as HTML5 -->
-					{% elseif row | slice(0, 6) == '<video' %}
-						<div class="gallery-item video video--html5">{{ row }}</div>
+						<div class="gallery-item video video--array">
+							<video controls preload="metadata">
+								<source src="{{ row.url }}#t=0.1" type="video/mp4">
+								<source src="{{ row.url }}#t=0.1" type="video/webm">
+							</video>
+						</div>
 
 					<!-- Embedded YouTube|Vimeo video in IFRAME -->
 					{% elseif row | slice(0, 7) == '<iframe' %}
 						<div class="gallery-item video video--iframe">{{ row }}</div>
-
-					<!-- FV Player shortcode -->
-					{% elseif row | slice(0, 9) == '[fvplayer'%}
-						<div class="gallery-item video video--fvplayer">{{ function('do_shortcode', row) }}</div>
 					{% endif %}
 				{% endfor %}
 			</div>
-			<div class="post__contact-form grid__grid-item grid-item-4">
+			<div class="post__contact-form grid__grid-item grid-item--contact-form">
 				<section class="contact-form">
 				  <h1>Contact us</h1>
 				  {{ function('do_shortcode', '[contact-form-7 id="115" title="Venture Contact Form"]') }}
