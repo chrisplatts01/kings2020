@@ -528,6 +528,12 @@ button:hover, button:focus, button.selected,
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 1;
+  padding-top: 1rem;
+}
+@media (min-width: 50rem) {
+  .grid-item--main-content {
+    padding-top: 0;
+  }
 }
 
 .grid-item--gallery {

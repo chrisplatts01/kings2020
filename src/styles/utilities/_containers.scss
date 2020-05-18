@@ -64,6 +64,11 @@
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 1;
+  padding-top: 1rem;
+
+  @include breakpoint($medium) {
+    padding-top: 0;
+  }
 }
 
 .grid-item--gallery {
