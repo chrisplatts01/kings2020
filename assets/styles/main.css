@@ -524,15 +524,24 @@ button:hover, button:focus, button.selected,
 }
 
 .grid-item--main-content {
-  grid-area: content;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
 }
 
 .grid-item--gallery {
-  grid-area: gallery;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 .grid-item--contact-form {
-  grid-area: form;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
 }
 
 /*# sourceMappingURL=main.css.map */
