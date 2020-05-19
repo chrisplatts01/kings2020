@@ -4,37 +4,42 @@
 <main class="page-content">
 	<div class="wrapper">
 		<div class="post post-type-{{ post.post_type }} grid" id="post-{{ post.ID }}">
+
+			<div class="post__hero grid-item grid-item--hero">
+				{% if hero.type == 'image' %}
+					<div class="hero-item image image--array"><img src="{{ hero.url }}" alt="{{ hero.alt }}"></div>
+				{% elseif hero.type == 'video' %}
+					<div class="hero-item video video--array">
+						<video controls preload="metadata">
+							<source src="{{ hero.url }}#t=0.1" type="video/mp4">
+							<source src="{{ hero.url }}#t=0.1" type="video/webm">
+						</video>
+					</div>
+				{% elseif hero | slice(0, 7) == '<iframe' %}
+					<div class="hero-item video video--iframe">{{ hero }}</div>
+				{% endif %}
+			</div>
+
 			<article class="post__content grid-item grid-item--main-content">
 				<h1 class="post-heading">{{ post.title }}</h1>
 				<div class="post-body">
 					{{post.content}}
 				</div>
 			</article>
+
 			<div class="post__gallery grid-item grid-item--gallery">
-				{% set rows = function('get_field', 'images') %}
-				{% for row in rows %}
-						{# <!--
-						{% for key, value in row %}
-							{{ key }} => {{ value }}
-						{% endfor %}
-						--> #}
-
-					<!-- Image from media library as array -->
-					{% if row.type == 'image' %}
-						<div class="gallery-item image image--array"><img src="{{ row.url }}" alt="{{ row.alt }}"></div>
-
-					<!-- Video from media library as array -->
-					{% elseif row.type == 'video' %}
+				{% for gallery_item in gallery %}
+					{% if gallery_item.type == 'image' %}
+						<div class="gallery-item image image--array"><img src="{{ gallery_item.url }}" alt="{{ gallery_item.alt }}"></div>
+					{% elseif gallery_item.type == 'video' %}
 						<div class="gallery-item video video--array">
 							<video controls preload="metadata">
-								<source src="{{ row.url }}#t=0.1" type="video/mp4">
-								<source src="{{ row.url }}#t=0.1" type="video/webm">
+								<source src="{{ gallery_item.url }}#t=0.1" type="video/mp4">
+								<source src="{{ gallery_item.url }}#t=0.1" type="video/webm">
 							</video>
 						</div>
-
-					<!-- Embedded YouTube|Vimeo video in IFRAME -->
-					{% elseif row | slice(0, 7) == '<iframe' %}
-						<div class="gallery-item video video--iframe">{{ row }}</div>
+					{% elseif image | slice(0, 7) == '<iframe' %}
+						<div class="gallery-item video video--iframe">{{ image }}</div>
 					{% endif %}
 				{% endfor %}
 			</div>
