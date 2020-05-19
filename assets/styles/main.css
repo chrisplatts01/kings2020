@@ -112,6 +112,16 @@ ul {
   line-height: 1.5;
 }
 
+blockquote {
+  position: relative;
+  margin: 0;
+  border-left: 1rem solid #e8e8e8;
+  padding: 0 0 0 2rem;
+}
+blockquote p:first-child {
+  margin-top: 0;
+}
+
 img {
   width: 100%;
   height: auto;
@@ -548,9 +558,14 @@ button:hover, button:focus, button.selected,
     display: grid;
     grid-gap: 2rem;
     gap: 2rem;
-    grid-template-columns: 56% auto;
+    grid-template-columns: 50% auto;
     grid-template-rows: auto auto auto;
     grid-template-areas: "hero     content" "gallery  content" "gallery  form";
+  }
+}
+@media (min-width: 64rem) {
+  .grid {
+    grid-template-columns: 56% auto;
   }
 }
 
