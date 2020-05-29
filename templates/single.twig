@@ -25,6 +25,13 @@
 				<div class="post-body">
 					{{post.content}}
 				</div>
+
+				<div class="post__contact-form grid-itemx grid-itemx--contact-form">
+					<section class="contact-form">
+					  <h1>Contact us</h1>
+					  {{ function('do_shortcode', '[contact-form-7 id="115" title="Venture Contact Form"]') }}
+					</section>
+				</div>
 			</article>
 
 			<div class="post__gallery grid-item grid-item--gallery">
@@ -42,12 +49,6 @@
 						<div class="gallery-item video video--iframe">{{ image }}</div>
 					{% endif %}
 				{% endfor %}
-			</div>
-			<div class="post__contact-form grid-item grid-item--contact-form">
-				<section class="contact-form">
-				  <h1>Contact us</h1>
-				  {{ function('do_shortcode', '[contact-form-7 id="115" title="Venture Contact Form"]') }}
-				</section>
 			</div>
 		</div>
 	</div>
