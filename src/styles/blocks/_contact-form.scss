@@ -21,6 +21,12 @@
     }
   }
 
+  input[type=checkbox],
+  input[type=radio] {
+    display: inline-block;
+    width: 1rem;
+  }
+
   input[type=submit] {
     @extend .button;
     color: $white !important;
@@ -31,6 +37,11 @@
     &:focus {
       background-color: darken($blue, 20%) !important;
     }
+  }
+
+  .wpcf7-list-item {
+    display: block;
+    margin-left: 0;
   }
 
   .wpcf7-not-valid-tip {

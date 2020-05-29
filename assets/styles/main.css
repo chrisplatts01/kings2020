@@ -435,6 +435,11 @@ img {
 .contact-form textarea.wpcf7-not-valid {
   border-color: #df2525;
 }
+.contact-form input[type=checkbox],
+.contact-form input[type=radio] {
+  display: inline-block;
+  width: 1rem;
+}
 .contact-form input[type=submit] {
   color: #fff !important;
   background-color: #2991d6 !important;
@@ -442,6 +447,10 @@ img {
 }
 .contact-form input[type=submit]:hover, .contact-form input[type=submit]:focus {
   background-color: #195780 !important;
+}
+.contact-form .wpcf7-list-item {
+  display: block;
+  margin-left: 0;
 }
 .contact-form .wpcf7-not-valid-tip {
   display: inline-block;
