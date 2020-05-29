@@ -56,4 +56,15 @@ ul {
   line-height: 1.5;
 }
 
+blockquote {
+  position: relative;
+  margin: 0;
+  border-left: 1rem solid $lightGrey;
+  padding: 0 0 0 2rem;
+
+  p:first-child {
+    margin-top: 0;
+  }
+}
+
 
