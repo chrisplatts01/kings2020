@@ -1,13 +1,14 @@
 button,
-.button {
+.button,
+.wp-block-button a {
   font-family: $sansSerif_B;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
   padding: .5rem 1rem;
-  color: $blue;
-  background-color: $white;
-  border: 1px solid $blue;
+  color: $blue !important;
+  background-color: $white !important;
+  border: 1px solid $blue !important;
   border-radius: 0;
   text-decoration: none;
   transition: all .5s;
@@ -15,8 +16,8 @@ button,
   &:hover,
   &:focus,
   &.selected {
-    color: $white;
-    background-color: $blue;
+    color: $white !important;
+    background-color: $blue !important;
   }
 }
 
