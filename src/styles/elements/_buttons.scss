@@ -21,9 +21,6 @@ button,
   }
 }
 
-
-
-
 // Override Stackable button block
 #postContent,
 #pageContent {
@@ -45,7 +42,7 @@ button,
   .ugb-button .ugb-button--inner {
     @extend .button;
     text-decoration: none !important;
-    display: block;
+    display: inline-block;
   }
 
   .ugb-button,

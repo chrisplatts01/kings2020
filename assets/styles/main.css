@@ -551,7 +551,7 @@ button:hover, button:focus, button.selected,
 #postContent .ugb-button .ugb-button--inner,
 #pageContent .ugb-button .ugb-button--inner {
   text-decoration: none !important;
-  display: block;
+  display: inline-block;
 }
 #postContent .ugb-button,
 #postContent .ugb-button .ugb-button--inner,
