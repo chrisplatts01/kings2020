@@ -5,13 +5,13 @@ button,
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  padding: .5rem 1rem;
+  padding: .5rem 1rem !important;
   color: $blue !important;
   background-color: $white !important;
   border: 1px solid $blue !important;
   border-radius: 0;
-  text-decoration: none;
-  transition: all .5s;
+  text-decoration: none !important;
+  transition: all .5s ease-in-out;
 
   &:hover,
   &:focus,
@@ -20,6 +20,73 @@ button,
     background-color: $blue !important;
   }
 }
+
+
+
+
+// Override Stackable button block
+#postContent,
+#pageContent {
+  .ugb-button {
+    border: none;
+    border-radius: 0;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 1;
+    background: #2091e1;
+    background: var(--s-primary-color,#2091e1);
+    padding: 0;
+    line-height: 1.5!important;
+    align-items: center;
+    font-size: 1em;
+    position: relative;
+  }
+
+  .ugb-button .ugb-button--inner {
+    @extend .button;
+    text-decoration: none !important;
+    display: block;
+  }
+
+  .ugb-button,
+  .ugb-button .ugb-button--inner {
+    transition: all .5s ease-in-out;
+    box-shadow: none !important;
+  }
+
+  .ugb-button * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .ugb-button:not(.ugb-link-button):not(.ugb-button--design-link) {
+    text-decoration: none !important;
+  }
+
+  .ugb-button-wrapper .ugb-block-content .ugb-button {
+    margin: 0;
+    display: block;
+  }
+
+  .ugb-button-wrapper .ugb-block-content {
+    display: flex !important;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: -.5em;
+    margin-right: -.5em;
+    width: calc(100% + 1em);
+  }
+
+  .ugb-block-content,
+  .ugb-inner-block {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+  }
+}
+
 
 
 

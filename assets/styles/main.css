@@ -489,6 +489,8 @@ img {
 
 button,
 .button,
+#postContent .ugb-button .ugb-button--inner,
+#pageContent .ugb-button .ugb-button--inner,
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope-buttons button,
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item .rt-detail .read-more a,
 .contact-form input[type=submit],
@@ -497,24 +499,30 @@ button,
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem !important;
   color: #2991d6 !important;
   background-color: #fff !important;
   border: 1px solid #2991d6 !important;
   border-radius: 0;
-  text-decoration: none;
-  transition: all 0.5s;
+  text-decoration: none !important;
+  transition: all 0.5s ease-in-out;
 }
 button:hover, button:focus, button.selected,
 .button:hover,
+#postContent .ugb-button .ugb-button--inner:hover,
+#pageContent .ugb-button .ugb-button--inner:hover,
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope-buttons button:hover,
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item .rt-detail .read-more a:hover,
 .contact-form input[type=submit]:hover,
 .button:focus,
+#postContent .ugb-button .ugb-button--inner:focus,
+#pageContent .ugb-button .ugb-button--inner:focus,
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope-buttons button:focus,
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item .rt-detail .read-more a:focus,
 .contact-form input[type=submit]:focus,
 .button.selected,
+#postContent .ugb-button .selected.ugb-button--inner,
+#pageContent .ugb-button .selected.ugb-button--inner,
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope-buttons button.selected,
 .post-grid .rt-tpg-container .rt-row .rt-tpg-isotope .isotope-item .rt-detail .read-more a.selected,
 .contact-form input.selected[type=submit],
@@ -523,6 +531,67 @@ button:hover, button:focus, button.selected,
 .wp-block-button a.selected {
   color: #fff !important;
   background-color: #2991d6 !important;
+}
+
+#postContent .ugb-button,
+#pageContent .ugb-button {
+  border: none;
+  border-radius: 0;
+  display: inline-block;
+  cursor: pointer;
+  opacity: 1;
+  background: #2091e1;
+  background: var(--s-primary-color, #2091e1);
+  padding: 0;
+  line-height: 1.5 !important;
+  align-items: center;
+  font-size: 1em;
+  position: relative;
+}
+#postContent .ugb-button .ugb-button--inner,
+#pageContent .ugb-button .ugb-button--inner {
+  text-decoration: none !important;
+  display: block;
+}
+#postContent .ugb-button,
+#postContent .ugb-button .ugb-button--inner,
+#pageContent .ugb-button,
+#pageContent .ugb-button .ugb-button--inner {
+  transition: all 0.5s ease-in-out;
+  box-shadow: none !important;
+}
+#postContent .ugb-button *,
+#pageContent .ugb-button * {
+  position: relative;
+  z-index: 2;
+}
+#postContent .ugb-button:not(.ugb-link-button):not(.ugb-button--design-link),
+#pageContent .ugb-button:not(.ugb-link-button):not(.ugb-button--design-link) {
+  text-decoration: none !important;
+}
+#postContent .ugb-button-wrapper .ugb-block-content .ugb-button,
+#pageContent .ugb-button-wrapper .ugb-block-content .ugb-button {
+  margin: 0;
+  display: block;
+}
+#postContent .ugb-button-wrapper .ugb-block-content,
+#pageContent .ugb-button-wrapper .ugb-block-content {
+  display: flex !important;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+  width: calc(100% + 1em);
+}
+#postContent .ugb-block-content,
+#postContent .ugb-inner-block,
+#pageContent .ugb-block-content,
+#pageContent .ugb-inner-block {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
 }
 
 .wrapper {
