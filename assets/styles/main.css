@@ -572,7 +572,7 @@ button:hover, button:focus, button.selected,
 #postContent .ugb-button-wrapper .ugb-block-content .ugb-button,
 #pageContent .ugb-button-wrapper .ugb-block-content .ugb-button {
   margin: 0;
-  display: block;
+  display: inline-block;
 }
 #postContent .ugb-button-wrapper .ugb-block-content,
 #pageContent .ugb-button-wrapper .ugb-block-content {
