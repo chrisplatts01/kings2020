@@ -592,6 +592,10 @@ button:hover, button:focus, button.selected,
   padding: 0;
   width: 100%;
   position: relative;
+}
+#postContent .ugb-button-wrapper .ugb-block-content > *,
+#pageContent .ugb-button-wrapper .ugb-block-content > * {
+  width: 100%;
   text-align: center;
 }
 
