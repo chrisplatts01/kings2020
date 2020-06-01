@@ -8,6 +8,22 @@ $(function() {
   $('.post-grid__heading, .rt-tpg-isotope-buttons, .rt-tpg-isotope').wrap('<div class="wrapper"></div>');
   $('.wrapper').wrapInner('<div class="wrapper__inner"></div>');
 
+  // Smooth scroll #contactForm link
+  var scrollToForm = ( function () {
+    var $link = $('[href^="#"]');
+
+    $link.on('click', function () {
+      var $this = $(this);
+      var href = $this.attr('href');
+      var correction = $('#stickyHeader').height();
+      var $target = $(href);
+
+      $('html,body').animate({scrollTop: $target.offset().top - correction},'slow');
+
+      return false;
+    });
+  })();
+
   // Fix home/ventures page post gallery layout
   // - 'The Post Grid' plugin isotope layout not optimal,
   // - so here the width classes are overwritten
@@ -28,12 +44,8 @@ $(function() {
 
   // Fix menu highlight
   var path = window.location.href;
-  console.log('PATH: ', path, path.search('/ventures/'));
   if (path.search('/ventures/') !== -1) {
-    console.log('FOUND');
     $('#navMain').find('.menu').find('.menu-item').first().addClass('current-menu-item');
-  } else {
-    console.log('NOT FOUND');
   }
 
   // Make page header sticky on scroll
@@ -56,4 +68,5 @@ $(function() {
       }
     });
   })();
+
 });
