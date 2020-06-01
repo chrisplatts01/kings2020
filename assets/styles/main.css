@@ -573,7 +573,6 @@ button:hover, button:focus, button.selected,
 #pageContent .ugb-button-wrapper .ugb-block-content .ugb-button {
   margin: 0;
   display: inline-block;
-  text-align: center;
 }
 #postContent .ugb-button-wrapper .ugb-block-content,
 #pageContent .ugb-button-wrapper .ugb-block-content {
@@ -593,6 +592,7 @@ button:hover, button:focus, button.selected,
   padding: 0;
   width: 100%;
   position: relative;
+  text-align: center;
 }
 
 .wrapper {
