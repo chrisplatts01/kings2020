@@ -176,7 +176,7 @@ img {
 .header__logo a {
   display: inline-block;
   text-decoration: none;
-  width: 18rem;
+  width: 20rem;
   padding: 0.5rem 0 0.5rem 8rem;
   background: transparent url("../images/kcl-logo.png") left center no-repeat;
   background-size: auto 4.75rem;
@@ -207,21 +207,21 @@ img {
 .nav-main {
   padding: 0.5rem 0;
 }
-@media (min-width: 50rem) {
-  .nav-main {
-    font-size: 1.5rem;
-  }
-}
 .nav-main ul {
   display: inline-block;
   font-family: "bureau-grotesque-bold", sans-serif;
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 1;
-  text-align: right;
+  line-height: 1.4;
+  text-align: left;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+@media (min-width: 50rem) {
+  .nav-main ul {
+    text-align: right;
+  }
 }
 .nav-main .menu-item {
   display: inline-block;
@@ -230,6 +230,7 @@ img {
 .nav-main .menu-item a {
   text-decoration: none;
   color: #000;
+  padding: 0.2rem 0;
 }
 .nav-main .menu-item.current-menu-item a {
   color: #df2525;
@@ -621,12 +622,12 @@ button:hover, button:focus, button.selected,
 }
 @media (min-width: 64rem) {
   .wrapper__inner {
-    max-width: 80rem !important;
+    max-width: 81rem !important;
     margin: 0 auto !important;
     padding: 0 2rem !important;
   }
 }
-@media (min-width: 80rem) {
+@media (min-width: 81rem) {
   .wrapper__inner {
     max-width: 120rem !important;
     margin: 0 auto !important;
