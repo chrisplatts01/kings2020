@@ -218,7 +218,7 @@ img {
   margin: 0;
   padding: 0;
 }
-@media (min-width: 50rem) {
+@media (min-width: 64rem) {
   .nav-main ul {
     font-size: 1.5rem;
     text-align: right;

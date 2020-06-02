@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
 
-    @include breakpoint($medium) {
+    @include breakpoint($large) {
       font-size: 1.5rem;
       text-align: right;
     }
