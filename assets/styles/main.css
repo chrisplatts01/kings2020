@@ -638,6 +638,9 @@ button:hover, button:focus, button.selected,
   padding: 0 !important;
 }
 
+article.page-content {
+  background-color: #fff;
+}
 article.page-content .wrapper__inner .article-h1,
 article.page-content .wrapper__inner .article-body {
   max-width: 800px;
