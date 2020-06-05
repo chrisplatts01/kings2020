@@ -29,14 +29,21 @@
     padding: 0 9.375rem !important;
   }
 
-  // @include breakpoint($largest) {
-  //   max-width: calc($largest - 18.75rem) !important;
-  //   margin: 0 auto !important;
-  //   padding: 0 !important;
-  // }
-
   .is-fullwidth & {
     padding: 0 !important;
+  }
+}
+
+article.page-content {
+  background-color: $white;
+
+  .wrapper__inner {
+    .article-h1,
+    .article-body {
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 

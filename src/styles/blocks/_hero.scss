@@ -2,24 +2,6 @@
   position: relative;
 }
 
-// .hero__image {
-//   position: relative;
-//   left: -1rem;
-//   right: -1rem;
-//   width: calc(100% + 2rem);
-
-//   @include breakpoint($large) {
-//     left: 0;
-//     right: 0;
-//     width: 100%;
-//   }
-
-//   img {
-//     width: 100%;
-//     height: auto;
-//   }
-// }
-
 .hero__text {
   width: auto;
   max-width: 45rem;
@@ -40,15 +22,3 @@
     line-height: 2.875rem;
   }
 }
-
-// .hero__image + .hero__text {
-//   @include breakpoint($large) {
-//     position: absolute;
-//     max-width: 100%;
-//     top: 5rem;
-//     left: 5rem;
-//     right: 5rem;
-//     padding: 5rem;
-//     background-color: rgba(255, 255, 255, 0.8);
-//   }
-// }
