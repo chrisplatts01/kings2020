@@ -61,7 +61,7 @@ See [below for more commands](#commands).
 - `yarn fonts` -- Copy font assets
 - `yarn build` -- Delete and build script and stylesheet assets
 - `yarn build:all` -- Delete and build/copy all assets
-- `yarn build:prod` -- Delate, build/copy and minimise all assets     "yarn clean:all && yarn scripts:prod & yarn styles:prod & yarn images & yarn fonts",
+- `yarn build:prod` -- Delate, build/copy and minimise all assets     
 - `yarn watch` -- Bundle scripts, compile stylesheet assets and minify
 
 
