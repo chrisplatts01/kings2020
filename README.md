@@ -1,7 +1,7 @@
 
-# Kings2020 Theme
+# Kings2021 Theme
 
-The Wordpress theme for the Kings Ventures website (2020), based on the Timber Starter theme (a Twig-based theme based on the "\_s" theme).
+The Wordpress theme for the Kings Creatives website (2020/2021), based on the Timber Starter theme (a Twig-based theme based on the "\_s" theme).
 
 ## Installation [installation]
 
@@ -61,7 +61,7 @@ See [below for more commands](#commands).
 - `yarn fonts` -- Copy font assets
 - `yarn build` -- Delete and build script and stylesheet assets
 - `yarn build:all` -- Delete and build/copy all assets
-- `yarn build:prod` -- Delate, build/copy and minimise all assets     
+- `yarn build:prod` -- Delate, build/copy and minimise all assets
 - `yarn watch` -- Bundle scripts, compile stylesheet assets and minify
 
 
