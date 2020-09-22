@@ -169,20 +169,53 @@ class StarterSite extends Timber\Site {
 /**
  * Register the main stylesheet
  */
-function kings2020_register_main_stylesheet() {
+function kcl_register_main_stylesheet() {
 	wp_register_style('main-stylesheet', get_template_directory_uri() . '/assets/styles/main.css', '', '1.0');
 	wp_enqueue_style('main-stylesheet');
 }
-add_action('wp_enqueue_scripts', 'kings2020_register_main_stylesheet');
+add_action('wp_enqueue_scripts', 'kcl_register_main_stylesheet');
 
 /**
  * Register the main script
  */
-function kings2020_register_main_script() {
+function kcl_register_main_script() {
 	wp_register_script('main-script', get_template_directory_uri() . '/assets/scripts/main.js', '', '1.0');
 	wp_enqueue_script('main-script');
 }
-add_action('wp_enqueue_scripts', 'kings2020_register_main_script');
+add_action('wp_enqueue_scripts', 'kcl_register_main_script');
+
+/**
+ * Register new categories across the network
+ */
+function kcl_add_global_categories( $term_id )
+{
+    if ( get_current_blog_id() !== BLOG_ID_CURRENT_SITE || ( !$term = get_term( $term_id, 'category' ) ) )
+        return $term_id; // bail
+
+    if ( !$term->parent || ( !$parent = get_term( $term->parent, 'category' ) ) )
+        $parent = null;
+
+    global $wpdb;
+
+    $blogs = $wpdb->get_col( "SELECT blog_id FROM {$wpdb->blogs} WHERE site_id = '{$wpdb->siteid}'" );
+    foreach ( $blogs as $blog ) {
+        $wpdb->set_blog_id( $blog );
+
+        if ( $parent && ( $_parent = get_term_by( 'slug', $parent->slug, 'category' ) ) )
+            $_parent_ID = $_parent->term_id;
+        else
+            $_parent_ID = 0;
+
+        wp_insert_term( $term->name, 'category',  array(
+            'slug' => $term->slug,
+            'parent' => $_parent_ID,
+            'description' => $term->description
+        ));
+    }
+
+    $wpdb->set_blog_id( BLOG_ID_CURRENT_SITE );
+}
+add_action( 'created_category', 'kcl_add_global_categories' );
 
 /**
  * Disable the emoji's

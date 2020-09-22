@@ -1,6 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
+<!-- page-projects.twig -->
 <main id="pageContent" class="page-content" role="main">
 	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 		<div class="article__wrapper wrapper"{% if ( has_post_thumbnail() ) %} style="background-image: url({{ post.thumbnail.src }}); background-size: cover; background-position: center center"{% endif %}>
@@ -25,13 +26,19 @@
 		<h2>Filter by category</h2>
 		</div>
 
+		{{ console_log }}
+
+		{% for each_post in all_posts %}
+			<p>{{ each_post.post_title }}</p>
+		{% endfor %}
+
 		<!-- BEGIN: 'The Post Grid' plugin code -->
-		{{ function('do_shortcode', '[the-post-grid id="63" title="Filter by category"]') }}
+		{# { function('do_shortcode', '[the-post-grid id="24" title="Filter by category"]') } #}
 		<!-- END: 'The Post Grid' plugin code -->
 
-		<!-- BEGIN: 'XXXX' plugin code -->
-		{#{ function('do_shortcode', '[wpupg-grid-with-filters id="64"]') }#}
-		<!-- END: 'The Post Grid' plugin code -->
+		<!-- BEGIN: 'WP Ultimate Post Grid' plugin code -->
+		{# { function('do_shortcode', '[wpupg-grid-with-filters id="project-grid"]') } #}
+		<!-- END: 'WP Ultimate Post Grid' plugin code -->
 
 	</section>
 </main>
