@@ -14,7 +14,8 @@ $timber_post     = Timber::query_post();
 $context['post'] = $timber_post;
 
 // Get gallery items
-$gallery_items   = get_field('images');
+// $gallery_items   = get_field('images');
+$gallery_items = [];
 
 // Remove empty
 $gallery = array();

@@ -5,15 +5,7 @@
 <main id="pageContent" class="page-content" role="main">
 	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 		<div class="article__wrapper wrapper"{% if ( has_post_thumbnail() ) %} style="background-image: url({{ post.thumbnail.src }}); background-size: cover; background-position: center center"{% endif %}>
-			<!-- h1 class="article-h1">{{post.title}}</h1 -->
 			<section class="hero">
-				{#
-				{% if ( has_post_thumbnail() ) %}
-					<div class="hero__image">
-						{{ the_post_thumbnail.src }}
-					</div>
-				{% endif %}
-				#}
 				<div class="hero__text">
 					{{post.content}}
 				</div>
@@ -21,16 +13,47 @@
 		</div>
 	</article>
 
-	<section id="postGrid" class="post-grid">
-		<div class="post-grid__heading">
-		<h2>Filter by category</h2>
+	<section id="projectGrid" class="project-grid">
+		<div id="Filters" class="filters">
+			<div class="wrapper">
+				<h2>Filter by category</h2>
+				{# filters go here #}
+				<div class="filter-group categories">
+					<button class="filter category category--all selected" data-filter="*">All</button>
+					{% for term_slug, term_name in project_categories | sort %}
+					<button class="filter category category--{{ term_slug }}" data-filter=".{{ term_slug }}">{{ term_name }}</button>
+					{% endfor %}
+				</div>
+			</div>
 		</div>
 
-		{{ console_log }}
-
-		{% for each_post in all_posts %}
-			<p>{{ each_post.post_title }}</p>
-		{% endfor %}
+		<div class="projects">
+				<div class="wrapper">
+					<div id="isotope" class="isotope-container">
+					{% for project in projects %}
+						{# <div>{{ project | print_r }}</div> #}
+						{% set link = project.post_link %}
+						{% set thumbnail = project.post_thumbnail %}
+						{% set title = project.post_title %}
+						{% set excerpt = project.post_excerpt %}
+						{% set categories = project.post_categories %}
+						{% set tags = project.post_tags %}
+						<div class="project isotope_item {{ categories }}">
+							<figure class="project_thumbnail">
+								<a href="{{ link }}">
+									<img src="{{ thumbnail }}" alt="{{ title }}">
+								</a>
+							</figure>
+							<div class="project_content">
+								<h2 class="project_title">{{ title }}</h2>
+								<div class="project_excerpt">{{ excerpt }}</div>
+								<div class="project_read-more"><a href="{{ link }}">More</a></div>
+							</div>
+						</div>
+					{% endfor %}
+					</div>
+				</div>
+		</div>
 
 		<!-- BEGIN: 'The Post Grid' plugin code -->
 		{# { function('do_shortcode', '[the-post-grid id="24" title="Filter by category"]') } #}

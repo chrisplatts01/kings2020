@@ -1,102 +1,112 @@
-.post-grid {
-  background-color: $white;
+.project-grid {
 
-  .post-grid__heading h2 {
+  .wrapper {}
+
+  .wrapper_inner {}
+
+  h2 {
     font-family: $sansSerif_B;
     font-size: 1.375rem;
     font-weight: 500;
     line-height: 1.5;
   }
+}
 
-  // Styles for 'The Post Grid' plugin
-  .rt-tpg-container {
-    .rt-row {
-      padding: 0 !important;
-      margin: 0 !important;
+.filters {
+  background-color: $white;
 
-      .wrapper:last-child {
-        background-color: $lightGrey;
-      }
+  .wrapper__inner {
+    display: block !important;
+  }
 
-      .rt-tpg-isotope-buttons {
-        text-align: left;
-        padding: 0 !important;
-        margin: 0 !important;
+  .filter {
+  }
+}
 
-        button {
-          @extend .button;
-          margin: 0 1rem 1rem 0;
-          opacity: 1;
-        }
-      }
-      .rt-tpg-isotope {
-        padding: 0 !important;
-        margin: 30px -15px !important;
+.projects,
+.agencies {
+  background-color: $lightGrey;
+  padding: 30px 0;
 
-        .isotope-item {
-          margin: 0 15px;
-          width: calc(100% - 30px);
-          float: none;
+  .wrapper_inner {
+    margin: 0 -15px !important;
+  }
 
-          @include breakpoint($grid2Col) {
-            width: calc(50% - 30px);
-            float: left;
-          }
+  .isotope-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
-          @include breakpoint($grid3Col) {
-            width: calc(33.33333333% - 30px);
-            float: left;
-          }
+  .project,
+  .agency {
+    background-color: $white;
+    margin: 0 15px 30px;
+    padding: 0 0 30px;
 
-          @include breakpoint($grid4Col) {
-            width: calc(25% - 30px);
-            float: left;
-          }
+    width: calc(100% - 30px);
 
-          @include breakpoint($grid5Col) {
-            width: calc(20% - 30px);
-            float: left;
-          }
+    @include breakpoint($grid2Col) {
+      width: calc(50% - 30px);
+      float: left;
+    }
 
-          .rt-img-holder {
-            img {
-              width: 100%;
-              height: auto;
-            }
-          }
+    @include breakpoint($grid3Col) {
+      width: calc(33.33333333% - 30px);
+      float: left;
+    }
 
-          .rt-detail {
-            padding: $post-spacing $post-spacing / 2 !important;
+    @include breakpoint($grid4Col) {
+      width: calc(25% - 30px);
+      float: left;
+    }
 
-            .entry-title {
-              font-family: $sansSerif_B;
-              font-size: 1.6875rem;
-              font-weight: 500;
-              line-height: 1.5;
-              text-align: center;
+    @include breakpoint($grid5Col) {
+      width: calc(20% - 30px);
+      float: left;
+    }
+  }
 
-              a {
-                color: $black;
-              }
-            }
+  .project_thumbnail,
+  .agency_thumbnail {
+    margin: 0;
+  }
 
-            .entry-content {
-              @include breakpoint($medium) {
-                text-align: center;
-              }
-            }
+  .project_content,
+  .agency_content {
+    padding:  30px;
+  }
 
-            .read-more {
-              text-align: center !important;
+  .project_title,
+  .agency_title {
+    font-family: $sansSerif_B;
+    font-size: 1.6875rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
 
-              a {
-                @extend .button;
-                border-radius: 0 !important;
-              }
-            }
-          }
-        }
-      }
+    a {
+      color: $black;
+    }
+  }
+
+  .project_excerpt,
+  .agency_excerpt {
+    font-family: "caslon", serif;
+    font-size: 1.375rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .project_read-more,
+  .agency_read-more {
+    margin-top: 30px;
+    text-align: center;
+
+    a {
+      @extend .button;
+      border-radius: 0;
     }
   }
 }

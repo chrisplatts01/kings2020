@@ -1,0 +1,36 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<!-- page-agencies.twig -->
+<main id="pageContent" class="page-content" role="main">
+  <section id="agencyGrid" class="agency-grid">
+    <div class="agencies">
+        <div class="wrapper">
+          <div id="isotope" class="isotope-container">
+          {% for agency in agencies %}
+            {# <div>{{ agency | print_r }}</div> #}
+            {% set link = agency.post_link %}
+            {% set thumbnail = agency.post_thumbnail %}
+            {% set title = agency.post_title %}
+            {% set excerpt = agency.post_content | truncate(25) %}
+            {% set categories = agency.post_categories %}
+            {% set tags = agency.post_tags %}
+            <div class="agency isotope_item {{ categories }}">
+              <figure class="agency_thumbnail">
+                <a href="{{ link }}">
+                  <img src="{{ thumbnail }}" alt="{{ title }}">
+                </a>
+              </figure>
+              <div class="agency_content">
+                <h2 class="agency_title">{{ title }}</h2>
+                <div class="agency_excerpt">{{ excerpt }}</div>
+                <div class="agency_read-more"><a href="{{ link }}">More</a></div>
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

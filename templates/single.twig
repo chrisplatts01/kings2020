@@ -2,7 +2,7 @@
 
 {% block content %}
 <!-- single.twig -->
-<main class="page-content">
+<main class="post-content">
 	<div class="wrapper">
 		<div class="post post-type-{{ post.post_type }} grid" id="post-{{ post.ID }}">
 
@@ -26,17 +26,20 @@
 				<div class="post-body">
 					{{post.content}}
 				</div>
-
+{#
 				<div id="postContactForm" class="post__contact-form">
 					<section class="contact-form">
 					  <h1>Contact us</h1>
 					  {{ function('do_shortcode', '[contact-form-7 id="115" title="Venture Contact Form"]') }}
 					</section>
 				</div>
+#}
 			</article>
 
 			<div id="postGallery" class="post__gallery grid-item grid-item--gallery">
-				{% for gallery_item in gallery %}
+				{% set gallery = post.meta('Gallery') %}
+				XXX{{ gallery | print_r }}XXX
+				{% for gallery_item in gallery.images %}
 					{% if gallery_item.type == 'image' %}
 						<div class="gallery-item image image--array"><img src="{{ gallery_item.url }}" alt="{{ gallery_item.alt }}"></div>
 					{% elseif gallery_item.type == 'video' %}

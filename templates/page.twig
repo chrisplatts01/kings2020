@@ -2,12 +2,53 @@
 
 {% block content %}
   <!-- page.twig -->
-	<article class="page-content post-type-{{post.post_type}}" id="post-{{post.ID}}">
-		<section class="article__wrapper wrapper">
-			<h1 class="article-h1">{{post.title}}</h1>
-			<div class="article-body">
-				{{post.content}}
-			</div>
-		</section>
-	</article>
+	<main id="pageContent" class="page-content" role="main">
+    <div class="post-type-{{post.post_type}}" id="post-{{post.slug}}">
+      {% if post.thumbnail.src %}
+      <section class="hero">
+        <div class="hero__image">
+          <img src="{{ post.thumbnail.src }}">
+        </div>
+      </section>
+      {% endif %}
+		  <section class="article__wrapper wrapper">
+        <article class="main-content">
+          {% if Image(post.meta('logo')).src %}
+          <div class="logo"><img src="{{ Image(post.meta('logo')).src }}"></div>
+          {% endif %}
+          <h1 class="article-h1">{{post.title}}</h1>
+          <div class="article-body">
+				    {{post.content}}
+          </div>
+        </article>
+        <aside  class="side-content">
+          <section class="side-content__posts">
+            <h2>Posts</h2>
+            <ul class="posts">
+              {% for post in posts %}
+              <li><a href="post.link">{{ post.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </section>
+          <section class="side-content__posts">
+            <h2>Categories</h2>
+            <ul class="categories">
+              {% for item in post.meta('categories') %}
+              <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+          <section class="side-content__metadata">
+            <h2>Contact</h2>
+            <ul class="contacts">
+              <li><b>Website:</b> <a href="{{ post.meta('website') }}" target="_blank">{{ post.meta('website') }}</a></li>
+              <li><b>Email:</b> <a href="mailto:{{ post.meta('email') }}">{{ post.meta('email') }}</a></li>
+              <li><b>Phone:</b> {{ post.meta('phone') }}</li>
+            </ul>
+
+          </section>
+        </aside>
+      </section>
+    </div>
+  </main>
 {% endblock %}

@@ -5,7 +5,7 @@
   .wrapper__inner {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
 
     @include breakpoint($medium) {
@@ -16,36 +16,77 @@
   }
 }
 
-.header__logo {
+.site-header{}
+.nav-main{}
+
+.site-header__site-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+
+  &:link,
+  &:visited,
+  &:active {
+    color: $black;
+  }
+
+  &:hover,
+  &:focus {
+    color: $black;
+  }
+}
+
+.site-header__site-logo {
+  display: inline-block;
+  width: 100px;
+  line-height: 0;
+
+  @include breakpoint($medium) {
+    width: 126px;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.site-header__site-name {
+  display: inline-block;
+  width: 15rem;
   font-family: $sansSerif_B;
   font-size: 2rem;
   font-weight: 500;
   line-height: 1;
   letter-spacing: 1px;
   margin: 0;
+  padding-left: 1.75rem;
 
   @include breakpoint($medium) {
     font-size: 2.5rem;
+    padding-left: 2.25rem;
   }
 
   @include breakpoint($large) {
     margin-left: 0;
   }
 
-  a {
-    display: inline-block;
-    text-decoration: none;
-    width: 20rem;
-    padding: .5rem 0 .5rem 8rem;
-    background: transparent url('../images/kcl-logo.png') left center no-repeat;
-    background-size: auto 4.75rem;
 
-    @include breakpoint($medium) {
-      width: 24rem;
-      padding: .5rem 0 .5rem 10rem;
-      background: transparent url('../images/kcl-logo.png') left center no-repeat;
-      background-size: auto 6rem;
-    }
+  a {
+    // display: inline-block;
+    // text-decoration: none;
+    // width: 20rem;
+    // padding: .5rem 0 .5rem 8rem;
+    // background: transparent url('../images/kcl-logo.png') left center no-repeat;
+    // background-size: auto 4.75rem;
+
+    // @include breakpoint($medium) {
+    //   width: 24rem;
+    //   padding: .5rem 0 .5rem 10rem;
+    //   background: transparent url('../images/kcl-logo.png') left center no-repeat;
+    //   background-size: auto 6rem;
+    // }
 
     &:link,
     &:visited,
@@ -64,7 +105,6 @@
   position: fixed;
   top: 0;
   width: 100%;
-  // opacity: 0.9;
   z-index: 1000;
   display: none;
 }
