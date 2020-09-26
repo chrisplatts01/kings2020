@@ -469,6 +469,14 @@ img {
 .agencies .agency_title a {
   color: #000;
 }
+.projects .project_site-name,
+.projects .agency_site-name,
+.agencies .project_site-name,
+.agencies .agency_site-name {
+  text-align: center;
+  color: #2991d6;
+  margin-top: -1rem;
+}
 .projects .project_excerpt,
 .projects .agency_excerpt,
 .agencies .project_excerpt,

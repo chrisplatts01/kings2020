@@ -43,6 +43,7 @@ function get_projects() {
   $projects = [];
   foreach ($sites as $site) {
     switch_to_blog($site->blog_id);
+    $site_name = get_bloginfo('name');
     $site_projects = get_posts($args);
     foreach ($site_projects as $site_project) {
       // Get the link of this project
@@ -68,6 +69,7 @@ function get_projects() {
         $tags .= $project_tag->slug . ' ';
       }
       $site_project->post_tags = $tags;
+      $site_project->site_name = $site_name;
 
       // Add to projects
       array_push($projects, $site_project);

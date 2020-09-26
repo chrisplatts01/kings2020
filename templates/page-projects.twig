@@ -31,13 +31,13 @@
 				<div class="wrapper">
 					<div id="isotope" class="isotope-container">
 					{% for project in projects %}
-						{# <div>{{ project | print_r }}</div> #}
 						{% set link = project.post_link %}
 						{% set thumbnail = project.post_thumbnail %}
 						{% set title = project.post_title %}
 						{% set excerpt = project.post_excerpt %}
 						{% set categories = project.post_categories %}
 						{% set tags = project.post_tags %}
+						{% set site = project.site_name %}
 						<div class="project isotope_item {{ categories }}">
 							<figure class="project_thumbnail">
 								<a href="{{ link }}">
@@ -46,6 +46,7 @@
 							</figure>
 							<div class="project_content">
 								<h2 class="project_title">{{ title }}</h2>
+								<h3 class="project_site-name">{{ site }}</h3>
 								<div class="project_excerpt">{{ excerpt }}</div>
 								<div class="project_read-more"><a href="{{ link }}">More</a></div>
 							</div>

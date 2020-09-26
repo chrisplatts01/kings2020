@@ -90,6 +90,13 @@
     }
   }
 
+  .project_site-name,
+  .agency_site-name {
+    text-align: center;
+    color: $blue;
+    margin-top: -1rem;
+  }
+
   .project_excerpt,
   .agency_excerpt {
     font-family: "caslon", serif;

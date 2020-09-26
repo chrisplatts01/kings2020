@@ -35,11 +35,48 @@
 				</div>
 #}
 			</article>
-
 			<div id="postGallery" class="post__gallery grid-item grid-item--gallery">
-				{% set gallery = post.meta('Gallery') %}
-				XXX{{ gallery | print_r }}XXX
-				{% for gallery_item in gallery.images %}
+					{% if post.meta('image_1') %}
+						{% set gallery_item = post.meta('image_1') %}
+						<div class="gallery-item image image--array"><img src="{{ gallery_item.url }}" alt="{{ gallery_item.alt }}"></div>
+					{% endif %}
+
+					{% if post.meta('video_1') %}
+						{% set gallery_item = post.meta('video_1') %}
+						<div class="gallery-item video video--array">
+							<video controls preload="metadata">
+								<source src="{{ gallery_item.url }}#t=0.1" type="video/mp4">
+								<source src="{{ gallery_item.url }}#t=0.1" type="video/webm">
+							</video>
+						</div>
+					{% endif %}
+
+					{% if post.meta('embedded_video_1') %}
+						{% set gallery_item = post.meta('embedded_video_1') %}
+						<div class="gallery-item video video--iframe">{{ gallery_item }}</div>
+					{% endif %}
+
+					{% if post.meta('image_2') %}
+						{% set gallery_item = post.meta('image_2') %}
+						<div class="gallery-item image image--array"><img src="{{ gallery_item.url }}" alt="{{ gallery_item.alt }}"></div>
+					{% endif %}
+
+					{% if post.meta('image_3') %}
+						{% set gallery_item = post.meta('image_3') %}
+						<div class="gallery-item image image--array"><img src="{{ gallery_item.url }}" alt="{{ gallery_item.alt }}"></div>
+					{% endif %}
+
+					{% if post.meta('image_4') %}
+						{% set gallery_item = post.meta('image_4') %}
+						<div class="gallery-item image image--array"><img src="{{ gallery_item.url }}" alt="{{ gallery_item.alt }}"></div>
+					{% endif %}
+
+					{% if post.meta('image_5') %}
+						{% set gallery_item = post.meta('image_5') %}
+						<div class="gallery-item image image--array"><img src="{{ gallery_item.url }}" alt="{{ gallery_item.alt }}"></div>
+					{% endif %}
+				{#
+ 				{% for gallery_item in gallery_items %}
 					{% if gallery_item.type == 'image' %}
 						<div class="gallery-item image image--array"><img src="{{ gallery_item.url }}" alt="{{ gallery_item.alt }}"></div>
 					{% elseif gallery_item.type == 'video' %}
@@ -53,6 +90,7 @@
 						<div class="gallery-item video video--iframe">{{ image }}</div>
 					{% endif %}
 				{% endfor %}
+				#}
 			</div>
 		</div>
 	</div>
