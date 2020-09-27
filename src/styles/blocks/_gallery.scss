@@ -1,6 +1,11 @@
 .post__gallery {
   .gallery-item {
     margin-bottom: 2rem;
+    line-height: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     &.image {
       img {

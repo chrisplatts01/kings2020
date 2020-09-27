@@ -106,6 +106,106 @@ function get_project_categories() {
   return $categories;
 }
 
+$tags_by_category = [
+  "Copywriting" => [
+    "creative" => "Creative",
+    "pr" => "PR",
+    "print" => "Print",
+    "seo" => "SEO",
+    "technical" => "Technical",
+    "web-content" => "Web Content",
+  ],
+  "Creative Proposition" => [
+    "creative-proposition-development" => "Creative Proposition Development",
+    "look-and-feel" => "Look and Feel",
+    "messages-and-values" => "Messages and Values"
+  ],
+  "Design" => [
+    "advert" => "Advert",
+    "book" => "Book",
+    "brochure" => "Brochure",
+    "campaign" => "Campaign",
+    "digital" => "Digital",
+    "direct-mail" => "Direct Mail",
+    "email-comms" => "Email Comms",
+    "engagement-comms" => "Engagement Comms",
+    "environmental-graphics" => "Environmental Graphics",
+    "event-material" => "Event Material",
+    "information-design" => "Information Design",
+    "leaflet" => "Leaflet",
+    "look-and-feel" => "Look and Feel",
+    "mapping" => "Mapping",
+    "merchandise" => "Merchandise",
+    "misc" => "Misc",
+    "news" => "News",
+    "posters" => "Posters",
+    "prospectus" => "Prospectus",
+    "report" => "Report",
+    "signage" => "Signage",
+    "strategy-documents" => "Strategy Documents",
+    "wayfinding" => "Wayfinding"
+  ],
+  "Fundraising" => [
+    "community-fundraising-materials" => "Community Fundraising Materials",
+    "digital-fundraising" => "Digital Fundraising",
+    "direct-mail" => "Direct Mail",
+    "drtv" => "DRTV",
+    "fundraising-branding" => "Fundraising Branding",
+    "fundraising-events" => "Fundraising Events",
+    "fundraising-merchandise" => "Fundraising Merchandise",
+    "fundraising-strategy" => "Fundraising Strategy",
+    "leaflet-poster" => "Leaflet/Poster",
+    "newsletter" => "Newsletter",
+    "pr" => "PR",
+  ],
+  "Media" => [
+    "out-of-home" => "Out of Home",
+    "print" => "Print",
+    "programmatic" => "Programmatic",
+    "search" => "Search",
+    "sms" => "SMS",
+    "social-media" => "Social Media",
+    "video" => "Video",
+  ],
+  "Photography" => [
+    "aerial" => "Aerial",
+    "architectural" => "Architectural",
+    "editorial" => "Editorial",
+    "event" => "Event",
+    "landscape" => "Landscape",
+    "location" => "Location",
+    "objects" => "Objects",
+    "portrait" => "Portrait",
+    "reportage" => "Reportage",
+    "stock" => "Stock",
+    "teaching-learning" => "Teaching & Learning",
+  ],
+  "Video" => [
+    "animation" => "Animation",
+    "behind-the-scenes" => "Behind the Scenes",
+    "broadcast-online" => "Broadcast Online",
+    "event" => "Event",
+    "interview" => "Interview",
+    "live-streaming" => "Live Streaming",
+    "organisation-culture" => "Organisation Culture",
+    "podcasts" => "Podcasts",
+    "presentation" => "Presentation",
+    "radio-ads" => "Radio Ads",
+    "testimonial" => "Testimonial",
+    "tutorial" => "Tutorial",
+    "vlog" => "Vlog",
+    "webinar" => "Webinar",
+  ],
+  "Web/SEO" => [
+    "apps" => "Apps",
+    "campaign-journey-optimisation" => "Campaign Journey Optimisation",
+    "landing-page-design-and-development" => "Landing Page Design and Development",
+    "search-engine-optimisation-seo" => "Search Engine Optimisation (SEO)",
+    "user-experience-design-ux" => "User Experience Design (UX)",
+    "user-interface-design-ui" => "User Interface Design (UI)",
+  ]
+];
+
 // function get_project_tags() {
 //   $args = array(
 //     'taxonomy' => 'post_tag',
@@ -139,7 +239,7 @@ $timber_tags        = Timber::get_terms('post_tag');
 
 $timber_projects           = get_projects();
 $timber_project_categories = get_project_categories();
-// $timber_project_tags       = get_project_tags();
+$timber_project_tags       = $tags_by_category;
 
 // $timber_console_log = console_log($timber_all_posts);
 
@@ -153,6 +253,6 @@ $context['tags']        = $timber_tags;
 
 $context['projects']           = $timber_projects;
 $context['project_categories'] = $timber_project_categories;
-// $context['project_tags']       = $timber_project_tags;
+$context['project_tags']       = $timber_project_tags;
 
 Timber::render( array( 'page-' . $timber_post->post_name . '.twig', 'page.twig' ), $context );

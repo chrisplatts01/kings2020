@@ -251,4 +251,95 @@ add_action( 'created_category', 'kcl_add_global_categories' );
 // 	return $urls;
 // }
 
+/**
+ * Add tags
+ */
+// function kcl_add_terms() {
+//   $taxonomy = [
+//     "Advert",
+//     "Aerial",
+//     "Animation",
+//     "Apps",
+//     "Architectural",
+//     "Behind the Scenes",
+//     "Book",
+//     "Broadcast Online",
+//     "Brochure",
+//     "Campaign Journey Optimisation",
+//     "Campaign",
+//     "Community Fundraising Materials",
+//     "Creative Proposition Development",
+//     "Creative",
+//     "Digital Fundraising",
+//     "Digital",
+//     "Direct Mail",
+//     "DRTV",
+//     "Editorial",
+//     "Email Comms",
+//     "Engagement Comms",
+//     "Environmental Graphics",
+//     "Event Material",
+//     "Event",
+//     "Fundraising Branding",
+//     "Fundraising Events",
+//     "Fundraising Merchandise",
+//     "Fundraising Strategy",
+//     "Information Design",
+//     "Interview",
+//     "Landing Page Design and Development",
+//     "Landscape",
+//     "Leaflet",
+//     "Leaflet/Poster",
+//     "Live Streaming",
+//     "Location",
+//     "Look and Feel",
+//     "Mapping",
+//     "Merchandise",
+//     "Messages and Values",
+//     "Misc",
+//     "News",
+//     "Newsletter",
+//     "Objects",
+//     "Organisation Culture",
+//     "Out of Home",
+//     "Podcasts",
+//     "Portrait",
+//     "Posters",
+//     "PR",
+//     "Presentation",
+//     "Print",
+//     "Print",
+//     "Programmatic",
+//     "Prospectus",
+//     "Radio Ads",
+//     "Report",
+//     "Reportage",
+//     "Search Engine Optimisation (SEO)",
+//     "Search",
+//     "SEO",
+//     "Signage",
+//     "SMS",
+//     "Social Media",
+//     "Stock",
+//     "Strategy Documents",
+//     "Teaching & Learning",
+//     "Technical",
+//     "Testimonial",
+//     "Tutorial",
+//     "User Experience Design (UX)",
+//     "User Interface Design (UI)",
+//     "Video",
+//     "Vlog",
+//     "Wayfinding",
+//     "Web Content",
+//     "Webinar",
+//   ];
+
+//   foreach ($taxonomy as $term ) {
+//     wp_insert_term($term, 'post_tag', array('slug' => sanitize_title($term)));
+//   }
+// }
+// add_action('created_post_tag', 'kcl_add_terms');
+
+
 new StarterSite();

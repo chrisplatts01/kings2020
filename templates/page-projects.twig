@@ -15,13 +15,24 @@
 
 	<section id="projectGrid" class="project-grid">
 		<div id="Filters" class="filters">
-			<div class="wrapper">
-				<h2>Filter by category</h2>
-				{# filters go here #}
+			<div id="categoriesWrapper" class="wrapper">
+				<h2 id="categoriesHeading" class="categories-heading">Filter by category</h2>
 				<div class="filter-group categories">
 					<button class="filter category category--all selected" data-filter="*">All</button>
-					{% for term_slug, term_name in project_categories | sort %}
-					<button class="filter category category--{{ term_slug }}" data-filter=".{{ term_slug }}">{{ term_name }}</button>
+					{% for category_slug, category_name in project_categories | sort %}
+					<button class="filter category category--{{ category_slug }}" data-filter=".{{ category_slug }}">{{ category_name }}</button>
+					{% endfor %}
+				</div>
+
+				<h2 id="tagsHeading" class="tags-heading">Filter by tag</h2>
+				<div id="tagsWrapper" class="filter-group tags">
+					<button class="filter tag tag--all selected" data-filter="*">All</button>
+					{% set tags = project_tags %}
+					{% for tag_category, tag_tags in tags %}
+						<h3 class="tag-category">{{ tag_category }}</h3>
+							{% for tag_slug, tag_name in tag_tags %}
+								<button class="filter tag tag--{{ tag_slug }}" data-filter=".{{ tag_slug }}">{{ tag_name }}</button>
+							{% endfor %}
 					{% endfor %}
 				</div>
 			</div>
@@ -38,7 +49,7 @@
 						{% set categories = project.post_categories %}
 						{% set tags = project.post_tags %}
 						{% set site = project.site_name %}
-						<div class="project isotope_item {{ categories }}">
+						<div class="project isotope_item {{ categories }} {{ tags }}">
 							<figure class="project_thumbnail">
 								<a href="{{ link }}">
 									<img src="{{ thumbnail }}" alt="{{ title }}">

@@ -9,17 +9,29 @@
     font-size: 1.375rem;
     font-weight: 500;
     line-height: 1.5;
+
+    // &.tags-heading::after {
+    //   content: "Show \25bc";
+    //   width: auto;
+    //   text-align: center;
+    //   display: inline-block;
+    //   font-family: $sansSerif_B;
+    //   font-size: 18px;
+    //   margin-left: 24px;
+    //   padding: 4px 8px 0;
+    //   color: $darkGrey;
+    //   border: 1px solid $darkGrey;
+
+    //   &.is-visible::after {
+    //     content: "Hide \25b2";
+    //   }
+    // }
   }
-}
 
-.filters {
-  background-color: $white;
-
-  .wrapper__inner {
-    display: block !important;
-  }
-
-  .filter {
+  h3.tag-category {
+    font-family: $sansSerif;
+    font-weight: 300;
+    border-bottom: 1px solid $darkGrey;
   }
 }
 

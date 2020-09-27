@@ -31632,52 +31632,40 @@ var Isotope = __webpack_require__(/*! ../../node_modules/isotope-layout/dist/iso
 
 _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()(function() {
 
-  // Add wrapper and wrapper__inner classes for responsive layout
+  /**
+   * Add wrapper and wrapper__inner classes for responsive layout
+   */
   _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('.post-grid__heading, .rt-tpg-isotope-buttons, .rt-tpg-isotope').wrap('<div class="wrapper"></div>');
   _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('.wrapper').wrapInner('<div class="wrapper__inner"></div>');
 
-  // Smooth scroll #contactForm link
-  var scrollToForm = ( function () {
-    var $link = _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('[href^="#"]');
+  /**
+   * Smooth scroll #contactForm link
+   */
+  // var scrollToForm = (function () {
+  //   var $link = $('[href^="#"]');
 
-    $link.on('click', function () {
-      var $this = _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()(this);
-      var href = $this.attr('href');
-      var correction = _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('#stickyHeader').height();
-      var $target = _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()(href);
+  //   $link.on('click', function () {
+  //     var $this = $(this);
+  //     var href = $this.attr('href');
+  //     var correction = $('#stickyHeader').height();
+  //     var $target = $(href);
 
-      _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('html,body').animate({scrollTop: $target.offset().top - correction},'slow');
+  //     $('html,body').animate({scrollTop: $target.offset().top - correction},'slow');
 
-      return false;
-    });
-  })();
-
-  // Fix home/ventures page post gallery layout
-  // - 'The Post Grid' plugin isotope layout not optimal,
-  // - so here the width classes are overwritten
-  // var fixIsotopeLayout = (function () {
-  //   var $item = $('.isotope-item');
-  //   var prefix = 'rt-col-';
-  //   var sizes = ['xs-', 'sm-', 'md-', 'lg-'];
-  //   var cols = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '24'];
-  //   // var newClasses = 'rt-col-xs-12 rt-col-sm-6 rt-col-md-4 rt-col-lg-3 rt-col-xl-24';
-
-  //   sizes.forEach(function (size) {
-  //     cols.forEach(function (col) {
-  //       $item.removeClass(prefix + size + col);
-  //     });
+  //     return false;
   //   });
-  //   // $item.addClass(newClasses);
   // })();
 
   // Fix menu highlight
-  var path = window.location.href;
-  if (path.search('/ventures/') !== -1) {
-    _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('#navMain').find('.menu').find('.menu-item').first().addClass('current-menu-item');
-  }
+  // var path = window.location.href;
+  // if (path.search('/ventures/') !== -1) {
+  //   $('#navMain').find('.menu').find('.menu-item').first().addClass('current-menu-item');
+  // }
 
-  // Make page header sticky on scroll
-  var stickyHeader = (function() {
+  /**
+   * Make page header sticky on scroll
+   */
+  var stickyHeader = (function () {
     var $header = _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('#pageHeader');
     var $window = _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()(window);
     var $stickyHeader = _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('<div id="stickyHeader" class="sticky-header"></div>').prependTo('body');
@@ -31696,13 +31684,6 @@ _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()(funct
       }
     });
   })();
-
-  // Isotope
-  // var $grid = $('#isotope').isotope({
-  //   itemSelector: '.isotope_item',
-  //   layoutMode: 'masonry'
-  // });
-
 
   var iso = new Isotope( '#isotope', {
     itemSelector: '.isotope_item',
@@ -31727,25 +31708,29 @@ _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()(funct
     var $allButtons = _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('.filter-group').children('button');
     var filterValue = $thisButton.attr('data-filter');
 
-    console.log('CLICK');
+    console.log(filterValue);
 
     $allButtons.removeClass('selected');
     $thisButton.addClass('selected');
 
     filterValue = filterFns[ filterValue ] || filterValue;
-    // iso.isotope({ filter: filterValue });
     iso.arrange({ filter: filterValue });
   });
-  // change is-checked class on buttons
-  // $('.filter-group').each( function( i, buttonGroup ) {
-  //   var $buttonGroup = $( buttonGroup );
-  //   $buttonGroup.on( 'click', 'button', function() {
-  //     $buttonGroup.find('.selected').removeClass('selected');
-  //     $( this ).addClass('selected');
-  //   });
-  // });
 
+  /**
+   * Show/hide tag clouds
+   */
+  (function () {
+    var $tagsHeading = _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('#tagsHeading');
+    var $tagsWrapper = _node_modules_jquery_dist_jquery_js__WEBPACK_IMPORTED_MODULE_1___default()('#tagsWrapper');
 
+    $tagsWrapper.hide();
+
+    $tagsHeading.on('click', function () {
+      $tagsWrapper.slideToggle('slow');
+      $tagsHeading.toggleClass('is-visible');
+    });
+  })();
 });
 
 

@@ -1,13 +1,51 @@
 .filters {
-  padding: 0 0 30px;
-  // ul.categories {
-  //   list-style: none;
-  //   margin: 0 1rem;
-  //   padding: 0;
-  // }
+  padding: 0 0 15px;
+  background-color: $white;
 
-  // li.category {
-  //   display: inline-block;
-  //   margin: 0 1rem 2rem 0;
-  // }
+  .wrapper__inner {
+    display: block !important;
+  }
+
+  h2 {
+    font-family: $sansSerif_B;
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1.5;
+
+    &.tags-heading::after {
+      content: "Show \25bc";
+      width: auto;
+      text-align: center;
+      display: inline-block;
+      font-family: $sansSerif_B;
+      font-size: 18px;
+      margin-left: 24px;
+      padding: 4px 8px 0;
+      color: $darkGrey;
+      border: 1px solid $darkGrey;
+
+      &.is-visible::after {
+        content: "Hide \25b2";
+      }
+    }
+  }
+
+  h3.tag-category {
+    font-family: $sansSerif;
+    font-weight: 300;
+    border-bottom: 1px solid $darkGrey;
+  }
+
+  button.filter.tag {
+    border: 0 !important;
+    padding: 0 1rem 0.5rem 0 !important;
+
+    &:hover,
+    &:focus,
+    &.selected {
+      color: $blue !important;
+      background-color: $white !important;
+      text-decoration: underline !important;
+    }
+  }
 }

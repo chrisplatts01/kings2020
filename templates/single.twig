@@ -7,6 +7,8 @@
 		<div class="post post-type-{{ post.post_type }} grid" id="post-{{ post.ID }}">
 
 			<div id="postHero" class="post__hero grid-item grid-item--hero">
+				<div class="hero-item image image--array"><img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}"></div>
+				{#
 				{% if hero.type == 'image' %}
 					<div class="hero-item image image--array"><img src="{{ hero.url }}" alt="{{ hero.alt }}"></div>
 				{% elseif hero.type == 'video' %}
@@ -19,6 +21,7 @@
 				{% elseif hero | slice(0, 7) == '<iframe' %}
 					<div class="hero-item video video--iframe">{{ hero }}</div>
 				{% endif %}
+				#}
 			</div>
 
 			<article id="postContent" class="post__content grid-item grid-item--main-content">
@@ -26,15 +29,30 @@
 				<div class="post-body">
 					{{post.content}}
 				</div>
-{#
-				<div id="postContactForm" class="post__contact-form">
-					<section class="contact-form">
-					  <h1>Contact us</h1>
-					  {{ function('do_shortcode', '[contact-form-7 id="115" title="Venture Contact Form"]') }}
+				<aside class="post__side-content">
+					{% if post.meta('department') or post.meta('agency') or post.meta('project_type') or post.meta('budget') or post.meta('timescale')  %}
+					<section class="side-content__project-metadata">
+						<h2>Project metadata</h2>
+						<ul>
+							<li><b>Department: </b>{{ post.meta('department') }}</li>
+							<li><b>Agency: </b>{{ post.meta('agency') }}</li>
+							<li><b>Project type: </b>{{ post.meta('project_type') }}</li>
+							<li><b>Budget: </b>{{ post.meta('budget') }}</li>
+							<li><b>Timescale: </b>{{ post.meta('timescale') }}</li>
+						</ul>
 					</section>
-				</div>
-#}
+					{% endif %}
+
+					{% if post.meta('testimonial_text') %}
+					<section class="side-content__testimonial">
+						<h2>Testimonial</h2>
+						<div class="testimonial_text">{{ post.meta('testimonial_text') }}</div>
+						<div class="testimonial_source">{{ post.meta('testimonial_source') }}</div>
+					</section>
+					{% endif %}
+				</aside>
 			</article>
+
 			<div id="postGallery" class="post__gallery grid-item grid-item--gallery">
 					{% if post.meta('image_1') %}
 						{% set gallery_item = post.meta('image_1') %}

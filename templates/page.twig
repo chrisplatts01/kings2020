@@ -21,7 +21,8 @@
 				    {{post.content}}
           </div>
         </article>
-        <aside  class="side-content">
+        {% if post.slug != 'about' and post.slug != 'kings-brand' %}
+        <aside  class="page__side-content">
           <section class="side-content__posts">
             <h2>Posts</h2>
             <ul class="posts">
@@ -45,9 +46,9 @@
               <li><b>Email:</b> <a href="mailto:{{ post.meta('email') }}">{{ post.meta('email') }}</a></li>
               <li><b>Phone:</b> {{ post.meta('phone') }}</li>
             </ul>
-
           </section>
         </aside>
+        {% endif %}
       </section>
     </div>
   </main>

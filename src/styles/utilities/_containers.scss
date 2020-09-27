@@ -59,7 +59,6 @@ article.page-content {
     grid-template-areas:
         "hero     content"
         "gallery  content"
-        "gallery  form"
   }
 
   @include breakpoint($large) {
@@ -87,6 +86,6 @@ article.page-content {
   grid-area: gallery;
 }
 
-.grid-item--form {
-  grid-area: form;
-}
+// .grid-item--aside {
+//   grid-area: aside;
+// }
