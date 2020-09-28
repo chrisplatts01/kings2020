@@ -22,9 +22,7 @@
  */
 
 function get_agencies() {
-  $sites = get_sites(
-    array('site__not_in' => array(1))
-  );
+  $sites = get_sites(array('site__not_in' => array(1, get_id_from_blogname('example-agency'))));
 
   $agencies = [];
   foreach ($sites as $site) {
@@ -39,12 +37,15 @@ function get_agencies() {
     // Get the thumbnail of this project
     $thumbnail = get_the_post_thumbnail_url($site_agency->ID);
     $site_agency->post_thumbnail = $thumbnail;
+    $site_agency->site_name = get_bloginfo('name');
 
     restore_current_blog();
 
     // Add to projects
     array_push($agencies, $site_agency);
   }
+  shuffle($agencies);
+
   return $agencies;
 }
 

@@ -24,7 +24,7 @@
         {% if post.slug != 'about' and post.slug != 'kings-brand' %}
         <aside  class="page__side-content">
           <section class="side-content__posts">
-            <h2>Posts</h2>
+            <h2>Projects</h2>
             <ul class="posts">
               {% for post in posts %}
               <li><a href="post.link">{{ post.title }}</a></li>
@@ -32,10 +32,10 @@
             </ul>
           </section>
           <section class="side-content__posts">
-            <h2>Categories</h2>
+            <h2>Specialisms</h2>
             <ul class="categories">
-              {% for item in post.meta('categories') %}
-              <li>{{ item }}</li>
+              {% for item in post.meta('taxonomy') %}
+              <li>{{ function('get_cat_name', item) }}</li>
               {% endfor %}
             </ul>
           </section>

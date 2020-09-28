@@ -54,7 +54,7 @@
   .agency {
     background-color: $white;
     margin: 0 15px 30px;
-    padding: 0 0 30px;
+    padding: 0;
 
     width: calc(100% - 30px);
 
@@ -100,6 +100,10 @@
     a {
       color: $black;
     }
+  }
+
+  .agency_title {
+    margin-top: 0;
   }
 
   .project_site-name,

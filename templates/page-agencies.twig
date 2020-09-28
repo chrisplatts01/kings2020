@@ -10,16 +10,19 @@
           {% for agency in agencies %}
             {% set link = agency.post_link %}
             {% set thumbnail = agency.post_thumbnail %}
-            {% set title = agency.post_title %}
+            {#% set title = agency.post_title %#}
+            {% set title = agency.site_name %}
             {% set excerpt = agency.post_content | truncate(25) %}
             {% set categories = agency.post_categories %}
             {% set tags = agency.post_tags %}
             <div class="agency isotope_item {{ categories }}">
+              <!--
               <figure class="agency_thumbnail">
                 <a href="{{ link }}">
                   <img src="{{ thumbnail }}" alt="{{ title }}">
                 </a>
               </figure>
+              -->
               <div class="agency_content">
                 <h2 class="agency_title">{{ title }}</h2>
                 <div class="agency_excerpt">{{ excerpt }}</div>

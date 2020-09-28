@@ -467,7 +467,7 @@ img {
 .agencies .agency {
   background-color: #fff;
   margin: 0 15px 30px;
-  padding: 0 0 30px;
+  padding: 0;
   width: calc(100% - 30px);
 }
 @media (min-width: 40rem) {
@@ -533,6 +533,10 @@ img {
 .agencies .project_title a,
 .agencies .agency_title a {
   color: #000;
+}
+.projects .agency_title,
+.agencies .agency_title {
+  margin-top: 0;
 }
 .projects .project_site-name,
 .projects .agency_site-name,

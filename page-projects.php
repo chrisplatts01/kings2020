@@ -36,9 +36,7 @@ function get_projects() {
     'order'           => 'ASC'
   );
 
-  $sites = get_sites(
-    array('site__not_in' => array(1))
-  );
+  $sites = get_sites(array('site__not_in' => array(1, get_id_from_blogname('example-agency'))));
 
   $projects = [];
   foreach ($sites as $site) {
